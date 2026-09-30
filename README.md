@@ -69,14 +69,10 @@ sound-operating-system/
 
 | Member | Role | Files |
 |---|---|---|
-| 1 | Team Leader / Integration | `main.py`, `config.py`, `README.md` |
-| 2 | Dataset Lead | `data/raw/`, `preprocessing/build_dataset.py` |
-| 3 | Preprocessing | `preprocessing/clean.py` |
-| 4 | ML Model | `training/train.py`, `training/compare_models.py`, `nlp/classifier.py`, `models/` |
-| 5 | Evaluation + Extractor | `training/evaluate.py`, `nlp/extractor.py` |
-| 6 | Speech | `speech/transcriber.py` |
-| 7 | Linux Commands | `commands/executor.py`, `scripts/` |
-| 8 | Testing + Documentation | `tests/`, `docs/` |
+| 1 | Dataset Lead | `data/raw/`, `preprocessing/build_dataset.py` | Preprocessing | `preprocessing/clean.py` |
+| 2 | ML Model | `training/train.py`, `training/compare_models.py`, `nlp/classifier.py`, `models/` |Evaluation + Extractor | `training/evaluate.py`, `nlp/extractor.py` |
+| 3 | Speech | `speech/transcriber.py` |
+| 4 | Linux Commands | `commands/executor.py`, `scripts/` |
 
 ## Adding your dataset file
 
