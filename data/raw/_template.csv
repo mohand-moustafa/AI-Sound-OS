@@ -1,0 +1,11 @@
+text,intent
+Open Chrome,OPEN_APPLICATION
+Please launch Firefox,OPEN_APPLICATION
+Close Chrome,CLOSE_APPLICATION
+Create a folder called AI Project,CREATE_FOLDER
+Make a new file named notes.txt,CREATE_FILE
+Show me the files in Downloads,LIST_FILES
+Open the Downloads folder,OPEN_FOLDER
+Show system information,SYSTEM_INFO
+What time is it,SHOW_DATE_TIME
+What is the weather today,UNKNOWN

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Secrets (we do not use any, but just in case)
+.env
+
+# Note: models/intent_model.joblib is NOT ignored on purpose.
+# It is small, and we commit it so everyone can run the project without retraining.
