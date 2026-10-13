@@ -1,0 +1,80 @@
+text,intent
+open chrome,OPEN_APPLICATION
+launch firefox,OPEN_APPLICATION
+start vs code,OPEN_APPLICATION
+run terminal,OPEN_APPLICATION
+open the media player,OPEN_APPLICATION
+start the code editor,OPEN_APPLICATION
+run the browser,OPEN_APPLICATION
+open settings app,OPEN_APPLICATION
+close chrome,CLOSE_APPLICATION
+shut down firefox,CLOSE_APPLICATION
+kill vs code,CLOSE_APPLICATION
+exit the terminal,CLOSE_APPLICATION
+close the media player,CLOSE_APPLICATION
+quit the application,CLOSE_APPLICATION
+stop chrome,CLOSE_APPLICATION
+close settings window,CLOSE_APPLICATION
+create a folder called AI Project,CREATE_FOLDER
+make a new directory named documents,CREATE_FOLDER
+create folder desktop data,CREATE_FOLDER
+make directory python scripts,CREATE_FOLDER
+create a new folder music,CREATE_FOLDER
+make folder project backup,CREATE_FOLDER
+create a folder named images,CREATE_FOLDER
+make directory downloads temp,CREATE_FOLDER
+create a file named notes.txt,CREATE_FILE
+make a new text file called report,CREATE_FILE
+create file script.py,CREATE_FILE
+make a text document data.csv,CREATE_FILE
+create a file named todo.md,CREATE_FILE
+make file config json,CREATE_FILE
+create a python file test.py,CREATE_FILE
+make document notes docx,CREATE_FILE
+show files in downloads,LIST_FILES
+list files in documents,LIST_FILES
+what is inside the desktop folder,LIST_FILES
+show me the contents of music,LIST_FILES
+list all files in pictures,LIST_FILES
+display files in folder projects,LIST_FILES
+show directory files,LIST_FILES
+list items in current folder,LIST_FILES
+open the downloads folder,OPEN_FOLDER
+open documents directory,OPEN_FOLDER
+show me the desktop folder,OPEN_FOLDER
+open folder pictures,OPEN_FOLDER
+access downloads directory,OPEN_FOLDER
+open music folder,OPEN_FOLDER
+open folder project files,OPEN_FOLDER
+open directory documents,OPEN_FOLDER
+show system information,SYSTEM_INFO
+what is my cpu and ram status,SYSTEM_INFO
+system specs,SYSTEM_INFO
+check system hardware,SYSTEM_INFO
+display memory usage,SYSTEM_INFO
+show cpu temperature,SYSTEM_INFO
+system performance status,SYSTEM_INFO
+check disk space,SYSTEM_INFO
+what time is it,SHOW_DATE_TIME
+tell me the current date,SHOW_DATE_TIME
+what is the time today,SHOW_DATE_TIME
+show current clock,SHOW_DATE_TIME
+what day is today,SHOW_DATE_TIME
+display date and time,SHOW_DATE_TIME
+what is the time now,SHOW_DATE_TIME
+tell me today's date,SHOW_DATE_TIME
+what is the weather today,UNKNOWN
+open the front door,UNKNOWN
+play some relaxing music,UNKNOWN
+order a pizza online,UNKNOWN
+who is the president of the country,UNKNOWN
+turn on the living room lights,UNKNOWN
+tell me a funny joke,UNKNOWN
+make a cup of coffee,UNKNOWN
+what is the meaning of life,UNKNOWN
+book a flight ticket,UNKNOWN
+send a message to my friend,UNKNOWN
+how much is this car,UNKNOWN
+play video games,UNKNOWN
+call mom on the phone,UNKNOWN
+what is the recipe for cake,UNKNOWN
