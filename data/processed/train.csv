@@ -1,0 +1,642 @@
+text,intent
+open folder python projects,OPEN_FOLDER
+tell me an interesting riddle,UNKNOWN
+open system preferences window,OPEN_APPLICATION
+make directory for exports,CREATE_FOLDER
+list all files in folder,LIST_FILES
+can you help me set a timer,UNKNOWN
+close google chrome browser,CLOSE_APPLICATION
+create text file notes.md,CREATE_FILE
+go to pictures folder,OPEN_FOLDER
+shut down terminal shell,CLOSE_APPLICATION
+open target folder,OPEN_FOLDER
+what date is today,SHOW_DATE_TIME
+display project file tree,LIST_FILES
+open folder for pictures,OPEN_FOLDER
+start video player app,OPEN_APPLICATION
+start the chrome application,OPEN_APPLICATION
+what time is it in 24 hour format,SHOW_DATE_TIME
+create a new folder named work,CREATE_FOLDER
+who created this application,UNKNOWN
+close system settings panel,CLOSE_APPLICATION
+terminate vs code editor,CLOSE_APPLICATION
+start firefox browser session,OPEN_APPLICATION
+open folder for documents,OPEN_FOLDER
+what is the weather outlook today,UNKNOWN
+show all items in directory,LIST_FILES
+check system hardware,SYSTEM_INFO
+open mozilla firefox web tool,OPEN_APPLICATION
+make directory downloads temp,CREATE_FOLDER
+what time does the store open,UNKNOWN
+open the downloads directory,OPEN_FOLDER
+play some acoustic guitar music,UNKNOWN
+please open media player,OPEN_APPLICATION
+make directory for datasets,CREATE_FOLDER
+list all files in current directory,LIST_FILES
+show system specifications,SYSTEM_INFO
+terminate system configurations,CLOSE_APPLICATION
+show items in target folder,LIST_FILES
+show me files in directory,LIST_FILES
+show all items in source directory,LIST_FILES
+close system preferences,CLOSE_APPLICATION
+start chrome web session,OPEN_APPLICATION
+what is the weather forecast,UNKNOWN
+exit the terminal,CLOSE_APPLICATION
+open folder named music,OPEN_FOLDER
+what year is it currently,SHOW_DATE_TIME
+what is the weather like outside right now,UNKNOWN
+open vlc media player,OPEN_APPLICATION
+create folder assets,CREATE_FOLDER
+what is your favorite hobby,UNKNOWN
+make folder project files,CREATE_FOLDER
+send a message to my friend,UNKNOWN
+terminate google chrome app,CLOSE_APPLICATION
+what is the current time zone,SHOW_DATE_TIME
+tell me today's date format string,SHOW_DATE_TIME
+what is your favourite movie,UNKNOWN
+display files in desktop,LIST_FILES
+open settings panel,OPEN_APPLICATION
+please close terminal shell,CLOSE_APPLICATION
+who maintains this software project,UNKNOWN
+show memory usage details,SYSTEM_INFO
+make script app.py,CREATE_FILE
+exit display settings,CLOSE_APPLICATION
+navigate to downloads directory,OPEN_FOLDER
+open terminal tool,OPEN_APPLICATION
+create a folder named documents,CREATE_FOLDER
+close google chrome,CLOSE_APPLICATION
+run google chrome now,OPEN_APPLICATION
+open the command prompt,OPEN_APPLICATION
+open control panel on pc,OPEN_APPLICATION
+make directory for build files,CREATE_FOLDER
+can you help me cook,UNKNOWN
+make a folder for reports,CREATE_FOLDER
+exit firefox browser application,CLOSE_APPLICATION
+start audio music player,OPEN_APPLICATION
+open command line terminal,OPEN_APPLICATION
+open code studio,OPEN_APPLICATION
+what is today's date format,SHOW_DATE_TIME
+show contents of reports folder,LIST_FILES
+create a folder named database,CREATE_FOLDER
+make directory for assets,CREATE_FOLDER
+create file requirements.txt,CREATE_FILE
+close terminal shell session,CLOSE_APPLICATION
+check cpu core usage,SYSTEM_INFO
+display hardware diagnostics report,SYSTEM_INFO
+tell me a story,UNKNOWN
+who is your creator,UNKNOWN
+close google chrome app now,CLOSE_APPLICATION
+show current clock,SHOW_DATE_TIME
+open folder for assets,OPEN_FOLDER
+tell me what date it is,SHOW_DATE_TIME
+exit google chrome app,CLOSE_APPLICATION
+start vlc media software,OPEN_APPLICATION
+close display configuration,CLOSE_APPLICATION
+display system hardware info,SYSTEM_INFO
+what month and year is it now,SHOW_DATE_TIME
+create a new folder music,CREATE_FOLDER
+close google browser,CLOSE_APPLICATION
+launch browser window,OPEN_APPLICATION
+show files in projects,LIST_FILES
+create a python file utils_helper.py,CREATE_FILE
+open directory documents,OPEN_FOLDER
+exit firefox web browser,CLOSE_APPLICATION
+tell me the exact local time,SHOW_DATE_TIME
+navigate to distribution path,OPEN_FOLDER
+please open visual studio code,OPEN_APPLICATION
+what is the weather update today,UNKNOWN
+tell me a smart riddle,UNKNOWN
+close mozilla firefox,CLOSE_APPLICATION
+terminate system configuration options,CLOSE_APPLICATION
+launch control panel settings,OPEN_APPLICATION
+create a folder named scripts,CREATE_FOLDER
+tell me a fun trivia fact,UNKNOWN
+display system health diagnostics,SYSTEM_INFO
+show system information,SYSTEM_INFO
+start firefox browser application,OPEN_APPLICATION
+start the google chrome app,OPEN_APPLICATION
+play a video game,UNKNOWN
+what is your favorite hobby or sport,UNKNOWN
+make directory for sources,CREATE_FOLDER
+exit chrome browser,CLOSE_APPLICATION
+what is the current date and time,SHOW_DATE_TIME
+what is the local time right now,SHOW_DATE_TIME
+create a folder named config,CREATE_FOLDER
+do you like coffee,UNKNOWN
+close the media player,CLOSE_APPLICATION
+list all files in assets folder,LIST_FILES
+what is your favorite color,UNKNOWN
+create folder target files,CREATE_FOLDER
+start a new terminal shell,OPEN_APPLICATION
+what day of the week is today,SHOW_DATE_TIME
+quit visual studio code workspace,CLOSE_APPLICATION
+what day of the week is today's date,SHOW_DATE_TIME
+show files in desktop folder,LIST_FILES
+show me the contents of music,LIST_FILES
+start code development studio,OPEN_APPLICATION
+exit control panel,CLOSE_APPLICATION
+create directory named research,CREATE_FOLDER
+list files in python folder,LIST_FILES
+close command line,CLOSE_APPLICATION
+close command prompt tool,CLOSE_APPLICATION
+what is your favorite programming language,UNKNOWN
+terminate firefox web browser,CLOSE_APPLICATION
+can you remind me to take a break,UNKNOWN
+navigate to desktop folder,OPEN_FOLDER
+close settings panel window,CLOSE_APPLICATION
+start chrome browser session,OPEN_APPLICATION
+what is today date,SHOW_DATE_TIME
+what time is it,SHOW_DATE_TIME
+create markdown document,CREATE_FILE
+what is today's day of the week,SHOW_DATE_TIME
+open settings on my pc,OPEN_APPLICATION
+start mozilla application,OPEN_APPLICATION
+start vlc video player,OPEN_APPLICATION
+open document library folder,OPEN_FOLDER
+exit the google chrome software,CLOSE_APPLICATION
+close mozilla firefox browser,CLOSE_APPLICATION
+list documents directory,LIST_FILES
+show date and time,SHOW_DATE_TIME
+tell me a funny story,UNKNOWN
+open desktop folder,OPEN_FOLDER
+check cpu usage and temp,SYSTEM_INFO
+make a text document log.txt,CREATE_FILE
+close visual studio code workspace,CLOSE_APPLICATION
+make a python script file model.py,CREATE_FILE
+open code editor workspace,OPEN_APPLICATION
+list all files in build directory,LIST_FILES
+close settings window,CLOSE_APPLICATION
+display hardware status,SYSTEM_INFO
+make a new folder for media,CREATE_FOLDER
+show me the date,SHOW_DATE_TIME
+open audio player application,OPEN_APPLICATION
+open cmd terminal,OPEN_APPLICATION
+who is the president,UNKNOWN
+create text file data.txt,CREATE_FILE
+tell me a very funny joke,UNKNOWN
+display code file list,LIST_FILES
+stop chrome,CLOSE_APPLICATION
+shut down terminal program,CLOSE_APPLICATION
+play some ambient music,UNKNOWN
+launch visual studio code workspace,OPEN_APPLICATION
+book a flight ticket,UNKNOWN
+open mozilla firefox web browser app,OPEN_APPLICATION
+what is your favorite song,UNKNOWN
+open system settings menu,OPEN_APPLICATION
+list documents folder contents,LIST_FILES
+can you set a 10 minute timer,UNKNOWN
+close chrome window,CLOSE_APPLICATION
+make folder named python_scripts,CREATE_FOLDER
+please open google chrome,OPEN_APPLICATION
+quit visual studio code studio,CLOSE_APPLICATION
+quit vscode editor app,CLOSE_APPLICATION
+create folder assets library,CREATE_FOLDER
+what is your favorite video game,UNKNOWN
+create file main.py,CREATE_FILE
+open video library directory,OPEN_FOLDER
+create a folder named models,CREATE_FOLDER
+who created this software,UNKNOWN
+close firefox browser application,CLOSE_APPLICATION
+make a python script main_test.py,CREATE_FILE
+create folder documentation,CREATE_FOLDER
+start vlc media tool,OPEN_APPLICATION
+what is the weather condition outside,UNKNOWN
+launch the chrome browser app,OPEN_APPLICATION
+display logs directory contents,LIST_FILES
+make an env config file,CREATE_FILE
+what is your favourite movie genre,UNKNOWN
+open code editor environment,OPEN_APPLICATION
+start vlc video utility,OPEN_APPLICATION
+order a pizza online,UNKNOWN
+make a python file test_script.py,CREATE_FILE
+open vlc player,OPEN_APPLICATION
+what is the time right now,SHOW_DATE_TIME
+open the web browser,OPEN_APPLICATION
+who is the primary developer,UNKNOWN
+make a json configuration file,CREATE_FILE
+what month and year is it,SHOW_DATE_TIME
+what is today's full date readout,SHOW_DATE_TIME
+create a folder named raw_data,CREATE_FOLDER
+open code editor window,OPEN_APPLICATION
+what is the exact current time,SHOW_DATE_TIME
+display raw files list,LIST_FILES
+shut down code editor,CLOSE_APPLICATION
+terminate code editor window,CLOSE_APPLICATION
+open folder named documents,OPEN_FOLDER
+create a python file test.py,CREATE_FILE
+terminate terminal shell window,CLOSE_APPLICATION
+show contents of current folder,LIST_FILES
+launch chrome web software,OPEN_APPLICATION
+system information please,SYSTEM_INFO
+navigate to downloads directory path,OPEN_FOLDER
+make a python script app.py,CREATE_FILE
+close visual studio code editor,CLOSE_APPLICATION
+open folder for downloads,OPEN_FOLDER
+make folder files,CREATE_FOLDER
+open desktop directory,OPEN_FOLDER
+open visual studio code editor app,OPEN_APPLICATION
+please launch chrome browser,OPEN_APPLICATION
+show all items in directory path,LIST_FILES
+display files in pictures folder,LIST_FILES
+open folder documents,OPEN_FOLDER
+display build file tree,LIST_FILES
+open media player application software,OPEN_APPLICATION
+exit google chrome browser,CLOSE_APPLICATION
+start the firefox app,OPEN_APPLICATION
+launch vscode application,OPEN_APPLICATION
+create folder desktop temp,CREATE_FOLDER
+navigate to documents directory,OPEN_FOLDER
+what is today's date,SHOW_DATE_TIME
+launch vscode development app,OPEN_APPLICATION
+what is the weather condition,UNKNOWN
+check system cpu frequency stats,SYSTEM_INFO
+open display settings panel,OPEN_APPLICATION
+close code editor environment,CLOSE_APPLICATION
+navigate to documents folder,OPEN_FOLDER
+play some instrumentals,UNKNOWN
+create folder temporary storage,CREATE_FOLDER
+quit code editor,CLOSE_APPLICATION
+create file log.txt,CREATE_FILE
+open terminal command line,OPEN_APPLICATION
+what is the cpu usage,SYSTEM_INFO
+open mozilla firefox web utility,OPEN_APPLICATION
+create folder processed_data,CREATE_FOLDER
+navigate to documents path,OPEN_FOLDER
+open folder for user data,OPEN_FOLDER
+create directory data,CREATE_FOLDER
+run command prompt interface,OPEN_APPLICATION
+tell me today's full date string,SHOW_DATE_TIME
+system specs,SYSTEM_INFO
+open pc settings,OPEN_APPLICATION
+list all files,LIST_FILES
+make a python script main_app.py,CREATE_FILE
+shut down terminal console,CLOSE_APPLICATION
+turn on the living room lights,UNKNOWN
+how is the weather outside,UNKNOWN
+play some music,UNKNOWN
+show total ram memory,SYSTEM_INFO
+display folder contents now,LIST_FILES
+open media playback application,OPEN_APPLICATION
+make a text document data.csv,CREATE_FILE
+make a json file settings.json,CREATE_FILE
+make folder for images,CREATE_FOLDER
+go to reports folder path,OPEN_FOLDER
+create text log file warning.log,CREATE_FILE
+close firefox application,CLOSE_APPLICATION
+open audio library folder,OPEN_FOLDER
+create a folder named temp_files,CREATE_FOLDER
+close settings app,CLOSE_APPLICATION
+display hardware diagnostics,SYSTEM_INFO
+what is the capital of France,UNKNOWN
+open folder downloads,OPEN_FOLDER
+what is your favourite book genre,UNKNOWN
+shut down terminal,CLOSE_APPLICATION
+who is the author of this program,UNKNOWN
+open vs code editor now,OPEN_APPLICATION
+terminate chrome browser,CLOSE_APPLICATION
+play some upbeat music,UNKNOWN
+create a new text file,CREATE_FILE
+show available system storage RAM,SYSTEM_INFO
+tell me what day of the week it is,SHOW_DATE_TIME
+create directory python codes,CREATE_FOLDER
+open chrome,OPEN_APPLICATION
+run command prompt utility,OPEN_APPLICATION
+make folder research,CREATE_FOLDER
+check disk space,SYSTEM_INFO
+make a new text file called report,CREATE_FILE
+list all files in directory now,LIST_FILES
+open audio media player,OPEN_APPLICATION
+launch control panel menu,OPEN_APPLICATION
+start terminal app,OPEN_APPLICATION
+create folder backup data,CREATE_FOLDER
+who authored this codebase,UNKNOWN
+what is the exact local time,SHOW_DATE_TIME
+open system control panel settings,OPEN_APPLICATION
+exit browser application,CLOSE_APPLICATION
+make a python file predict.py,CREATE_FILE
+open folder project files,OPEN_FOLDER
+open google chrome application,OPEN_APPLICATION
+open network settings,OPEN_APPLICATION
+check system cpu status report,SYSTEM_INFO
+open display configuration,OPEN_APPLICATION
+what is today's full date,SHOW_DATE_TIME
+make a new csv dataset,CREATE_FILE
+navigate to pictures path,OPEN_FOLDER
+open video library folder,OPEN_FOLDER
+tell me the current date details,SHOW_DATE_TIME
+what day of the week is today format,SHOW_DATE_TIME
+what is today's full date status,SHOW_DATE_TIME
+show free ram memory,SYSTEM_INFO
+show me the desktop folder,OPEN_FOLDER
+make file config json,CREATE_FILE
+start new terminal session,OPEN_APPLICATION
+show ram usage percentage,SYSTEM_INFO
+who is the president of the country,UNKNOWN
+can you help me write an email,UNKNOWN
+show used memory space,SYSTEM_INFO
+what is the weather update for today,UNKNOWN
+create text file description.txt,CREATE_FILE
+start code workspace,OPEN_APPLICATION
+what date is it,SHOW_DATE_TIME
+play some classic music,UNKNOWN
+make document notes docx,CREATE_FILE
+open folder for development,OPEN_FOLDER
+display pc specifications,SYSTEM_INFO
+what is the time now,SHOW_DATE_TIME
+display hardware health summary,SYSTEM_INFO
+make directory python scripts,CREATE_FOLDER
+list all files in pictures,LIST_FILES
+open terminal command console,OPEN_APPLICATION
+terminate settings utility,CLOSE_APPLICATION
+go to downloads folder path,OPEN_FOLDER
+start visual studio code please,OPEN_APPLICATION
+display system performance stats,SYSTEM_INFO
+check system cpu load status,SYSTEM_INFO
+make a python script evaluation.py,CREATE_FILE
+show free memory space RAM,SYSTEM_INFO
+what is my cpu usage,SYSTEM_INFO
+navigate to downloads path,OPEN_FOLDER
+what is your name,UNKNOWN
+check cpu performance,SYSTEM_INFO
+time and date check,SHOW_DATE_TIME
+play a random video,UNKNOWN
+show available system memory,SYSTEM_INFO
+open control center settings,OPEN_APPLICATION
+can you help me with cooking,UNKNOWN
+please open google chrome now,OPEN_APPLICATION
+tell me the current date,SHOW_DATE_TIME
+check system cpu frequency,SYSTEM_INFO
+create text log file info.log,CREATE_FILE
+make a json config file,CREATE_FILE
+close code editor,CLOSE_APPLICATION
+terminate mozilla firefox web utility,CLOSE_APPLICATION
+launch command line,OPEN_APPLICATION
+make a python file,CREATE_FILE
+make directory for tests,CREATE_FOLDER
+open mozilla firefox web browser,OPEN_APPLICATION
+close visual studio code software,CLOSE_APPLICATION
+exit mozilla firefox app,CLOSE_APPLICATION
+open settings utility,OPEN_APPLICATION
+open music folder,OPEN_FOLDER
+can you set a 5 minute timer,UNKNOWN
+open terminal shell window,OPEN_APPLICATION
+please close google chrome,CLOSE_APPLICATION
+display files in folder projects,LIST_FILES
+terminate system network settings,CLOSE_APPLICATION
+make a csv file data.csv,CREATE_FILE
+tell me what time it is,SHOW_DATE_TIME
+who is the lead developer,UNKNOWN
+launch firefox,OPEN_APPLICATION
+open sound settings panel,OPEN_APPLICATION
+what is your favorite food,UNKNOWN
+create folder archive files,CREATE_FOLDER
+show hidden files and folders,LIST_FILES
+launch visual studio code app,OPEN_APPLICATION
+launch vscode editor,OPEN_APPLICATION
+run command prompt tool,OPEN_APPLICATION
+open system configurations,OPEN_APPLICATION
+display calendar date,SHOW_DATE_TIME
+run the browser,OPEN_APPLICATION
+open operating system settings,OPEN_APPLICATION
+start visual studio code workspace,OPEN_APPLICATION
+start terminal program now,OPEN_APPLICATION
+open folder downloads directory,OPEN_FOLDER
+exit display settings panel,CLOSE_APPLICATION
+tell me today's date,SHOW_DATE_TIME
+start audio player tool,OPEN_APPLICATION
+what time is it now,SHOW_DATE_TIME
+quit vscode development app,CLOSE_APPLICATION
+exit mozilla firefox browser,CLOSE_APPLICATION
+what time is it right now please,SHOW_DATE_TIME
+open vlc player software,OPEN_APPLICATION
+launch firefox browser,OPEN_APPLICATION
+please start terminal console,OPEN_APPLICATION
+play some relaxing lo-fi,UNKNOWN
+show cpu specs,SYSTEM_INFO
+what is the weather report outside,UNKNOWN
+open terminal window,OPEN_APPLICATION
+tell me today's date in full,SHOW_DATE_TIME
+what day is today,SHOW_DATE_TIME
+who made you,UNKNOWN
+what time is it on the clock,SHOW_DATE_TIME
+open music directory,OPEN_FOLDER
+open up google chrome,OPEN_APPLICATION
+show cpu temperature,SYSTEM_INFO
+start chrome application now,OPEN_APPLICATION
+please close system settings,CLOSE_APPLICATION
+open system configuration options,OPEN_APPLICATION
+open visual studio code editor,OPEN_APPLICATION
+exit chrome application,CLOSE_APPLICATION
+make script test.py,CREATE_FILE
+create a folder named images,CREATE_FOLDER
+close firefox web app,CLOSE_APPLICATION
+what is the weather forecast for tomorrow,UNKNOWN
+make folder data analysis,CREATE_FOLDER
+tell me a joke please,UNKNOWN
+open downloads directory,OPEN_FOLDER
+open terminal shell,OPEN_APPLICATION
+please close terminal console,CLOSE_APPLICATION
+create new directory,CREATE_FOLDER
+launch visual studio code studio,OPEN_APPLICATION
+make a docker config file,CREATE_FILE
+display file list,LIST_FILES
+open media player interface,OPEN_APPLICATION
+launch vscode workspace,OPEN_APPLICATION
+make a json data file,CREATE_FILE
+open firefox browser window,OPEN_APPLICATION
+start vs code,OPEN_APPLICATION
+close chrome,CLOSE_APPLICATION
+what is the memory usage,SYSTEM_INFO
+make an ini config file,CREATE_FILE
+exit the google chrome tool,CLOSE_APPLICATION
+terminate terminal shell prompt,CLOSE_APPLICATION
+can you make coffee for me,UNKNOWN
+create text document readme.md,CREATE_FILE
+create text log file output.log,CREATE_FILE
+terminate terminal shell,CLOSE_APPLICATION
+show all files in pictures,LIST_FILES
+display hardware status report,SYSTEM_INFO
+start audio player software,OPEN_APPLICATION
+open mozilla firefox browser now,OPEN_APPLICATION
+what time is it right now,SHOW_DATE_TIME
+open folder named shared,OPEN_FOLDER
+open the media player,OPEN_APPLICATION
+who programmed this assistant,UNKNOWN
+open browser google chrome,OPEN_APPLICATION
+make directory for shared data,CREATE_FOLDER
+display hardware performance summary,SYSTEM_INFO
+play some relaxing sounds,UNKNOWN
+open mozilla firefox browser,OPEN_APPLICATION
+create a folder called AI Project,CREATE_FOLDER
+tell me the calendar date,SHOW_DATE_TIME
+create a folder named build,CREATE_FOLDER
+open folder for projects,OPEN_FOLDER
+please close google chrome now,CLOSE_APPLICATION
+how is the weather outside today,UNKNOWN
+close terminal command line,CLOSE_APPLICATION
+check system cpu core performance,SYSTEM_INFO
+make a python file main.py,CREATE_FILE
+create a python script dataset.py,CREATE_FILE
+can you summarize this text,UNKNOWN
+check system cpu utilization,SYSTEM_INFO
+tell me a science fact,UNKNOWN
+list files in user directory,LIST_FILES
+tell me the current calendar date,SHOW_DATE_TIME
+launch firefox web app,OPEN_APPLICATION
+shut down terminal window,CLOSE_APPLICATION
+list all documents,LIST_FILES
+navigate to storage path,OPEN_FOLDER
+exit mozilla app window,CLOSE_APPLICATION
+what is the weather outlook,UNKNOWN
+close network settings,CLOSE_APPLICATION
+exit mozilla application,CLOSE_APPLICATION
+list all files in project root,LIST_FILES
+please launch firefox browser,OPEN_APPLICATION
+what is inside the desktop folder,LIST_FILES
+create text log file error.log,CREATE_FILE
+open system network settings,OPEN_APPLICATION
+make a log file,CREATE_FILE
+who developed this project,UNKNOWN
+show pc specifications,SYSTEM_INFO
+launch code workspace tool,OPEN_APPLICATION
+open the documents directory,OPEN_FOLDER
+launch the google chrome software,OPEN_APPLICATION
+what is the meaning of life,UNKNOWN
+close terminal window now,CLOSE_APPLICATION
+make document report.txt,CREATE_FILE
+show me ram status,SYSTEM_INFO
+quit vscode workspace,CLOSE_APPLICATION
+make folder project backup,CREATE_FOLDER
+launch mozilla app,OPEN_APPLICATION
+create file settings.json,CREATE_FILE
+open media library folder,OPEN_FOLDER
+open display settings,OPEN_APPLICATION
+start mozilla app window,OPEN_APPLICATION
+open vlc media software,OPEN_APPLICATION
+open document temporary folder,OPEN_FOLDER
+launch vscode environment,OPEN_APPLICATION
+start chrome web browser,OPEN_APPLICATION
+open workspace directory,OPEN_FOLDER
+open mozilla firefox,OPEN_APPLICATION
+close new terminal session,CLOSE_APPLICATION
+tell me today's day name,SHOW_DATE_TIME
+what is the weather forecast update,UNKNOWN
+list all files in workspace root,LIST_FILES
+play a song for me,UNKNOWN
+create text document readme_dev.md,CREATE_FILE
+terminate command line window,CLOSE_APPLICATION
+play some nice music,UNKNOWN
+quit the application,CLOSE_APPLICATION
+launch mozilla,OPEN_APPLICATION
+please close firefox browser,CLOSE_APPLICATION
+list all files in shared folder,LIST_FILES
+display system health status,SYSTEM_INFO
+make a text log file activity.log,CREATE_FILE
+tell me a random science fact,UNKNOWN
+what is your favorite movie quote,UNKNOWN
+exit system preferences menu,CLOSE_APPLICATION
+list all files in directory,LIST_FILES
+open up google chrome browser,OPEN_APPLICATION
+quit code workspace,CLOSE_APPLICATION
+tell me a funny joke,UNKNOWN
+tell me the current time,SHOW_DATE_TIME
+make folder for user data,CREATE_FOLDER
+exit mozilla browser,CLOSE_APPLICATION
+check cpu overall performance,SYSTEM_INFO
+open firefox application,OPEN_APPLICATION
+can you remind me to drink water,UNKNOWN
+run a new terminal,OPEN_APPLICATION
+quit firefox now,CLOSE_APPLICATION
+exit chrome browser window,CLOSE_APPLICATION
+open music player application,OPEN_APPLICATION
+open the front door,UNKNOWN
+open terminal shell prompt,OPEN_APPLICATION
+open the settings menu,OPEN_APPLICATION
+list all items in current folder,LIST_FILES
+who maintains this project,UNKNOWN
+close terminal window,CLOSE_APPLICATION
+what is the time today,SHOW_DATE_TIME
+check memory and ram,SYSTEM_INFO
+play some ambient electronic music,UNKNOWN
+tell me a random fact,UNKNOWN
+list all files in data folder,LIST_FILES
+exit terminal emulator,CLOSE_APPLICATION
+list files in documents,LIST_FILES
+exit the firefox app,CLOSE_APPLICATION
+start firefox browser window,OPEN_APPLICATION
+exit powershell terminal,CLOSE_APPLICATION
+exit chrome web software,CLOSE_APPLICATION
+open code editor vscode,OPEN_APPLICATION
+close mozilla browser window,CLOSE_APPLICATION
+list items in current folder,LIST_FILES
+show all items in config path,LIST_FILES
+create text file notes.txt,CREATE_FILE
+terminate application,CLOSE_APPLICATION
+tell me a funny story please,UNKNOWN
+exit chrome web browser window,CLOSE_APPLICATION
+exit browser window,CLOSE_APPLICATION
+who maintains this source code,UNKNOWN
+close chrome browser tab,CLOSE_APPLICATION
+start terminal interface,OPEN_APPLICATION
+check my cpu status,SYSTEM_INFO
+display storage file list,LIST_FILES
+show ram details,SYSTEM_INFO
+open project folder,OPEN_FOLDER
+how is memory usage,SYSTEM_INFO
+tell me today date,SHOW_DATE_TIME
+quit vscode environment,CLOSE_APPLICATION
+navigate to config directory,OPEN_FOLDER
+close google chrome application,CLOSE_APPLICATION
+can you exit chrome,CLOSE_APPLICATION
+close firefox browser window,CLOSE_APPLICATION
+what is the weather like,UNKNOWN
+create directory backup files,CREATE_FOLDER
+launch code development environment,OPEN_APPLICATION
+open control panel window,OPEN_APPLICATION
+check device performance,SYSTEM_INFO
+open google chrome now,OPEN_APPLICATION
+close command prompt window,CLOSE_APPLICATION
+create directory for logs,CREATE_FOLDER
+make a properties config file,CREATE_FILE
+terminate mozilla firefox web browser,CLOSE_APPLICATION
+create python file script.py,CREATE_FILE
+create folder output files,CREATE_FOLDER
+display date and time,SHOW_DATE_TIME
+close visual studio code now,CLOSE_APPLICATION
+show available system RAM,SYSTEM_INFO
+close settings menu now,CLOSE_APPLICATION
+show battery status,SYSTEM_INFO
+start mozilla web browser,OPEN_APPLICATION
+can you translate this text,UNKNOWN
+make a folder for backup,CREATE_FOLDER
+make a yaml config file,CREATE_FILE
+make a python script file utils.py,CREATE_FILE
+stop media player app,CLOSE_APPLICATION
+what is your favourite music genre,UNKNOWN
+exit code development studio,CLOSE_APPLICATION
+what is system status,SYSTEM_INFO
+play some jazz music,UNKNOWN
+what is the time right now in my timezone,SHOW_DATE_TIME
+create a new folder for logs,CREATE_FOLDER
+show files in current folder,LIST_FILES
+launch chrome web app,OPEN_APPLICATION
+open music library folder,OPEN_FOLDER
+how are you doing,UNKNOWN
+open vs code editor for development,OPEN_APPLICATION
+terminate mozilla firefox web tool,CLOSE_APPLICATION
+make a cup of coffee,UNKNOWN
+go to documents folder,OPEN_FOLDER
+terminate code studio,CLOSE_APPLICATION
+open folder files,OPEN_FOLDER
+exit control panel settings,CLOSE_APPLICATION
+can you sing a song,UNKNOWN
+show items in current path,LIST_FILES
+create folder temp files,CREATE_FOLDER
+please launch google chrome now,OPEN_APPLICATION
+play video games,UNKNOWN
+open folder named logs,OPEN_FOLDER
+open settings control panel,OPEN_APPLICATION
+display asset file list,LIST_FILES
+shut down terminal interface,CLOSE_APPLICATION
+open media playback tool,OPEN_APPLICATION
+start vlc video software,OPEN_APPLICATION
