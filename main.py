@@ -14,21 +14,29 @@ from nlp.extractor import extract
 EXIT_WORDS = ("exit", "quit", "stop listening")
 
 
-def get_text(text_mode):
+def get_text(text_mode, wake_word=False):
     if text_mode:
         return input("> ").strip()
     # Imported here so text mode works even without a microphone / Whisper installed.
+    if wake_word:
+        from speech.transcriber import transcribe
+        from speech.wake_word import WakeWordListener
+        audio = WakeWordListener().listen_for_command()
+        return transcribe(audio) if audio is not None else ""
     from speech.transcriber import listen
     return listen()
 
 
-def run(text_mode=False, dry_run=False):
+def run(text_mode=False, dry_run=False, wake_word=False):
     classifier = IntentClassifier()
     print("Sound Operating System is ready. Say (or type) 'exit' to stop.\n")
     while True:
         try:
-            text = get_text(text_mode)
+            text = get_text(text_mode, wake_word=wake_word)
         except (EOFError, KeyboardInterrupt):
+            break
+        except (ImportError, OSError, RuntimeError) as error:
+            print(f"Audio input unavailable: {error}")
             break
         if not text:
             continue
@@ -51,5 +59,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Sound Operating System")
     parser.add_argument("--text", action="store_true", help="type commands instead of speaking")
     parser.add_argument("--dry-run", action="store_true", help="do not execute Linux actions")
+    parser.add_argument("--wake-word", action="store_true",
+                        help="wait for 'hey sound' before recording each command")
     args = parser.parse_args()
-    run(text_mode=args.text, dry_run=args.dry_run)
+    run(text_mode=args.text, dry_run=args.dry_run, wake_word=args.wake_word)

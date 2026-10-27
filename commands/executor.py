@@ -40,7 +40,8 @@ SAFE_NAME = re.compile(r"^[\w\- .]{1,50}$")
 
 
 def location_path(location):
-    return Path.home() / FOLDERS.get(location or "home", "")
+    home = Path(os.environ.get("HOME") or Path.home())
+    return home / FOLDERS.get(location or "home", "")
 
 
 def safe_path(base, name):

@@ -5,6 +5,7 @@ Run from the project root:
     python -m training.compare_models
 """
 import pandas as pd
+import csv
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -14,6 +15,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVC
 
 import config
+from preprocessing.clean import cleaned_text_column
 
 MODELS = {
     "Logistic Regression": LogisticRegression(max_iter=1000),
@@ -25,12 +27,13 @@ MODELS = {
 
 def main():
     train = pd.read_csv(config.PROCESSED_DIR / "train.csv")
+    text = cleaned_text_column(train)
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
     rows = []
     for name, clf in MODELS.items():
         pipe = Pipeline([("tfidf", TfidfVectorizer(ngram_range=(1, 2))), ("clf", clf)])
-        scores = cross_val_score(pipe, train["text_clean"], train["intent"], cv=cv, scoring="f1_macro")
+        scores = cross_val_score(pipe, text, train["intent"], cv=cv, scoring="f1_macro")
         rows.append((name, scores.mean(), scores.std()))
         print(f"{name:22s} F1 = {scores.mean():.3f} (+/- {scores.std():.3f})")
 
@@ -39,6 +42,11 @@ def main():
         f.write("| Model | Macro F1 (mean) | Std |\n|---|---|---|\n")
         for name, mean, std in rows:
             f.write(f"| {name} | {mean:.3f} | {std:.3f} |\n")
+    with open(config.BASE_DIR / "models" / "model_comparison_results.csv",
+              "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["model", "cv_f1_macro_mean", "cv_f1_macro_std"])
+        writer.writerows(rows)
     print("Saved docs/model_comparison.md")
 
 

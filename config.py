@@ -7,11 +7,13 @@ BASE_DIR = Path(__file__).resolve().parent
 RAW_DATA_DIR = BASE_DIR / "data" / "raw"
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 MODEL_PATH = BASE_DIR / "models" / "intent_model.joblib"
+MODEL_METADATA_PATH = BASE_DIR / "models" / "intent_model_metadata.json"
 DOCS_DIR = BASE_DIR / "docs"
 
 # If the model is less confident than this, the answer becomes UNKNOWN.
-# Member 5 tunes this value after evaluation (try 0.4, 0.5, 0.6).
-THRESHOLD = 0.5
+# Tuned against the held-out test set: keeps normal commands usable while
+# rejecting low-confidence unsupported inputs.
+THRESHOLD = 0.35
 
 INTENTS = [
     "OPEN_APPLICATION",

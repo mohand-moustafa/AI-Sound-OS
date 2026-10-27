@@ -1,0 +1,4 @@
+text,intent,text_clean,predicted
+stop media player program,CLOSE_APPLICATION,stop media player program,OPEN_APPLICATION
+kill vs code,CLOSE_APPLICATION,kill vs code,OPEN_APPLICATION
+can you launch browser,OPEN_APPLICATION,can you launch browser,UNKNOWN
