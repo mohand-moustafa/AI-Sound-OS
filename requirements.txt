@@ -5,4 +5,5 @@ joblib
 matplotlib
 faster-whisper
 sounddevice
+soundfile
 pytest

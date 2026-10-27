@@ -1,0 +1,20 @@
+{
+  "model": "TF-IDF + Logistic Regression",
+  "preprocessing": "preprocessing.clean.clean_text",
+  "training_data": "C:\\Users\\user\\.copilot\\repos\\copilot-worktrees\\AI-Sound-OS\\mohand-moustafa-solid-disco\\data\\processed\\train.csv",
+  "training_rows": 641,
+  "labels": [
+    "CLOSE_APPLICATION",
+    "CREATE_FILE",
+    "CREATE_FOLDER",
+    "LIST_FILES",
+    "OPEN_APPLICATION",
+    "OPEN_FOLDER",
+    "SHOW_DATE_TIME",
+    "SYSTEM_INFO",
+    "UNKNOWN"
+  ],
+  "random_state": 42,
+  "confidence_threshold": 0.35,
+  "scikit_learn_version": "1.9.1"
+}

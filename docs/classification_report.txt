@@ -1,0 +1,16 @@
+                   precision    recall  f1-score   support
+
+CLOSE_APPLICATION      1.000     0.926     0.962        27
+      CREATE_FILE      1.000     1.000     1.000        13
+    CREATE_FOLDER      1.000     1.000     1.000        13
+       LIST_FILES      1.000     1.000     1.000        12
+ OPEN_APPLICATION      0.943     0.971     0.957        34
+      OPEN_FOLDER      1.000     1.000     1.000        13
+   SHOW_DATE_TIME      1.000     1.000     1.000        13
+      SYSTEM_INFO      1.000     1.000     1.000        13
+          UNKNOWN      0.958     1.000     0.979        23
+
+         accuracy                          0.981       161
+        macro avg      0.989     0.989     0.989       161
+     weighted avg      0.982     0.981     0.981       161
+

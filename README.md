@@ -27,7 +27,9 @@ python main.py --text             # type commands, Linux actions run
 python main.py                    # voice mode (microphone)
 ```
 
-Until the real model is trained, a temporary keyword stub is used, so everything already runs.
+The repository includes a trained intent model after the training step. If
+the model file is absent, the classifier prints a warning and uses a
+temporary keyword fallback intended only for initial development.
 
 ## How to build the model
 
@@ -40,6 +42,13 @@ python -m training.train                # train and save models/intent_model.job
 python -m training.evaluate             # metrics, confusion matrix, errors
 python -m pytest                        # run all tests
 ```
+
+`training.train` also writes `models/intent_model_metadata.json`. The
+evaluation command writes `docs/classification_report.txt`,
+`docs/confusion_matrix.png`, and `docs/errors.csv`.
+
+For the complete Ubuntu setup, wake-word flow, speech data collection, and
+known hardware limitations, see [`docs/DEMO.md`](docs/DEMO.md).
 
 ## Folder structure
 
