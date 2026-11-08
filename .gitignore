@@ -5,6 +5,7 @@ __pycache__/
 venv/
 .pytest_cache/
 .ipynb_checkpoints/
+screenshots/*.png
 
 # Editors / OS
 .vscode/

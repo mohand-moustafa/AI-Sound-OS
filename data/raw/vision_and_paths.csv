@@ -1,0 +1,57 @@
+text,intent
+take a screenshot,TAKE_SCREENSHOT
+capture the screen,TAKE_SCREENSHOT
+take a picture of the screen,TAKE_SCREENSHOT
+save a screenshot,TAKE_SCREENSHOT
+screen capture please,TAKE_SCREENSHOT
+read the text on the screen,READ_SCREEN
+read my screen,READ_SCREEN
+what does the screen say,READ_SCREEN
+extract text from the screen,READ_SCREEN
+use ocr on the screen,READ_SCREEN
+describe what is on the screen,DESCRIBE_SCREEN
+describe the screen,DESCRIBE_SCREEN
+tell me what you see on the screen,DESCRIBE_SCREEN
+summarize the screen,DESCRIBE_SCREEN
+what is visible on my screen,DESCRIBE_SCREEN
+open the AI Project folder,OPEN_FOLDER
+open my projects folder,OPEN_FOLDER
+open the work folder in home,OPEN_FOLDER
+open the folder called reports,OPEN_FOLDER
+list files in my projects folder,LIST_FILES
+show files inside the AI Project folder,LIST_FILES
+list the contents of work,LIST_FILES
+create a folder called reports in projects,CREATE_FOLDER
+make a folder named backups inside documents,CREATE_FOLDER
+create a file called notes.txt in projects,CREATE_FILE
+make report.md inside the work folder,CREATE_FILE
+take a snapshot of my desktop,TAKE_SCREENSHOT
+capture my desktop,TAKE_SCREENSHOT
+save the current screen,TAKE_SCREENSHOT
+make a screen image,TAKE_SCREENSHOT
+grab the screen,TAKE_SCREENSHOT
+record a screenshot of the display,TAKE_SCREENSHOT
+save the desktop screenshot,TAKE_SCREENSHOT
+capture the whole display,TAKE_SCREENSHOT
+take a picture of my desktop,TAKE_SCREENSHOT
+get a screenshot of the monitor,TAKE_SCREENSHOT
+read everything on my display,READ_SCREEN
+read the words on my screen,READ_SCREEN
+scan the screen for text,READ_SCREEN
+perform ocr on my display,READ_SCREEN
+tell me the words on the screen,READ_SCREEN
+extract the visible words,READ_SCREEN
+read what is displayed,READ_SCREEN
+scan my desktop text,READ_SCREEN
+convert screen text to words,READ_SCREEN
+read the current window,READ_SCREEN
+give me a summary of the display,DESCRIBE_SCREEN
+analyze what is visible,DESCRIBE_SCREEN
+explain the current screen,DESCRIBE_SCREEN
+tell me what appears on my desktop,DESCRIBE_SCREEN
+what can you see on the display,DESCRIBE_SCREEN
+give me a screen overview,DESCRIBE_SCREEN
+analyze my desktop,DESCRIBE_SCREEN
+describe the current window,DESCRIBE_SCREEN
+report what is visible,DESCRIBE_SCREEN
+summarize what appears on screen,DESCRIBE_SCREEN
