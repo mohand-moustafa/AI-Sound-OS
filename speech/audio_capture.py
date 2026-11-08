@@ -7,6 +7,7 @@ sounddevice is imported lazily so the pure functions can be tested without a mic
 """
 import collections
 import logging
+import os
 import time
 from typing import Callable, Optional, Sequence
 
@@ -19,6 +20,9 @@ CHANNELS = 1             # mono
 CHUNK_DURATION = 0.1     # we read the mic in 100 ms pieces
 PRE_CHUNKS = 5           # keep 0.5 s before speech starts
 MIN_THRESHOLD = 0.01
+AUDIO_WAIT_TIMEOUT = float(os.environ.get("AUDIO_WAIT_TIMEOUT", "8"))
+AUDIO_MAX_DURATION = float(os.environ.get("AUDIO_MAX_DURATION", "10"))
+AUDIO_END_SILENCE = float(os.environ.get("AUDIO_END_SILENCE", "0.8"))
 
 
 # ---------------------------------------------------------------- helpers
@@ -149,10 +153,10 @@ def collect_utterance(
 
 
 def record_until_silence(
-    silence_duration: float = 1.0,
+    silence_duration: Optional[float] = None,
     threshold: Optional[float] = None,      # None = auto calibration
-    wait_timeout: float = 6.0,              # max wait for speech to START
-    max_duration: float = 8.0,              # max length of the command
+    wait_timeout: Optional[float] = None,   # max wait for speech to START
+    max_duration: Optional[float] = None,  # max length of the command
     min_speech_duration: float = 0.3,
     device: Optional[int] = None,
     sample_rate: int = SAMPLE_RATE,
@@ -163,6 +167,10 @@ def record_until_silence(
     Push-to-talk style recording: record one command, stop when speaker is silent.
     Returns float32 mono 16 kHz array, or None if nothing valid was said.
     """
+    silence_duration = AUDIO_END_SILENCE if silence_duration is None else silence_duration
+    wait_timeout = AUDIO_WAIT_TIMEOUT if wait_timeout is None else wait_timeout
+    max_duration = AUDIO_MAX_DURATION if max_duration is None else max_duration
+
     def status(msg):
         logger.info(msg)
         if on_status:

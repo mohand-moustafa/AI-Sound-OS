@@ -18,6 +18,7 @@ SAMPLE_RATE = 16000
 DEFAULT_MODEL_SIZE = os.environ.get("WHISPER_MODEL_SIZE", "small.en")
 WAKE_MODEL_SIZE = "tiny.en"             # fast model for the wake-phrase check
 MIN_SAMPLES = int(0.2 * SAMPLE_RATE)    # ignore clips shorter than 0.2 s
+DEFAULT_BEAM_SIZE = int(os.environ.get("WHISPER_BEAM_SIZE", "5"))
 
 COMMAND_PROMPT = None
 _models = {}
@@ -51,7 +52,8 @@ def _prepare(audio: Union[np.ndarray, str]) -> np.ndarray:
 
 
 def transcribe(audio: Union[np.ndarray, str], model_size: str = None,
-               beam_size: int = 5, prompt: str = COMMAND_PROMPT) -> str:
+               beam_size: int = DEFAULT_BEAM_SIZE,
+               prompt: str = COMMAND_PROMPT) -> str:
     """Convert audio to plain text. Returns '' if nothing was understood."""
     if audio is None:
         return ""
@@ -63,7 +65,9 @@ def transcribe(audio: Union[np.ndarray, str], model_size: str = None,
         samples, language="en", beam_size=beam_size,
         temperature=0.0,
         initial_prompt=prompt or None,
-        condition_on_previous_text=False, vad_filter=False)
+        condition_on_previous_text=False,
+        vad_filter=True,
+        vad_parameters={"min_silence_duration_ms": 300})
     text = " ".join(s.text.strip() for s in segments).strip()
     logger.debug("Heard: %r", text)
     return text

@@ -1,4 +1,14 @@
 text,intent,text_clean,predicted
-stop media player program,CLOSE_APPLICATION,stop media player program,OPEN_APPLICATION
 kill vs code,CLOSE_APPLICATION,kill vs code,OPEN_APPLICATION
+extract text from the screen,READ_SCREEN,extract text from the screen,UNKNOWN
+stop media player program,CLOSE_APPLICATION,stop media player program,UNKNOWN
+tell me what appears on my desktop,DESCRIBE_SCREEN,tell me what appears on my desktop,UNKNOWN
+tell me today's day name,SHOW_DATE_TIME,tell me today s day name,UNKNOWN
+show ram details,SYSTEM_INFO,show ram details,UNKNOWN
+what is inside the desktop folder,LIST_FILES,what is inside the desktop folder,UNKNOWN
+make a new directory named documents,CREATE_FOLDER,make a new directory named documents,UNKNOWN
+display folder contents now,LIST_FILES,display folder contents now,UNKNOWN
 can you launch browser,OPEN_APPLICATION,can you launch browser,UNKNOWN
+display logs directory contents,LIST_FILES,display logs directory contents,UNKNOWN
+what is the memory usage,SYSTEM_INFO,what is the memory usage,UNKNOWN
+extract the visible words,READ_SCREEN,extract the visible words,UNKNOWN

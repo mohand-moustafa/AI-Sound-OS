@@ -25,3 +25,13 @@ def test_no_name_given():
 
 def test_location():
     assert extract("LIST_FILES", "Show the files in Downloads") == {"location": "downloads"}
+
+
+def test_nested_custom_folder_path():
+    result = extract("OPEN_FOLDER", "Open the AI Project folder")
+    assert result == {"path": "AI Project"}
+
+
+def test_create_inside_custom_folder():
+    result = extract("CREATE_FILE", "Create a file called notes.txt in projects")
+    assert result == {"name": "notes.txt", "path": "projects"}
