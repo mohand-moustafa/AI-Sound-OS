@@ -7,6 +7,8 @@ from nlp.extractor import extract
 
 CASES = [
     ("Open Chrome", "OPEN_APPLICATION"),
+    ("Fire folks", "OPEN_APPLICATION"),
+    ("Close fire fox", "CLOSE_APPLICATION"),
     ("Close Firefox", "CLOSE_APPLICATION"),
     ("Create a folder called AI Project", "CREATE_FOLDER"),
     ("Create a file named notes.txt", "CREATE_FILE"),

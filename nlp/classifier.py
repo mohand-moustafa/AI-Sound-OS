@@ -9,6 +9,7 @@ from pathlib import Path
 
 import config
 from preprocessing.clean import clean_text
+from nlp.extractor import find_app
 
 
 def _keyword_stub(text):
@@ -62,6 +63,9 @@ class IntentClassifier:
         direct = self._direct_intent(text)
         if direct:
             return direct, 0.99
+        app_intent = self._application_intent(text)
+        if app_intent:
+            return app_intent, 0.98
         if self.model is None:
             return _keyword_stub(text)
 
@@ -72,6 +76,19 @@ class IntentClassifier:
         if confidence < self.threshold:
             return "UNKNOWN", confidence
         return intent, confidence
+
+    @staticmethod
+    def _application_intent(text):
+        """Route clear app names even when speech omits or distorts the verb."""
+        if not find_app(text):
+            return None
+        words = set(clean_text(text).split())
+        if {"close", "quit", "kill", "exit"} & words:
+            return "CLOSE_APPLICATION"
+        if {"open", "launch", "start", "run"} & words:
+            return "OPEN_APPLICATION"
+        # A standalone app name is a natural voice shortcut for opening it.
+        return "OPEN_APPLICATION"
 
     @staticmethod
     def _direct_intent(text):
