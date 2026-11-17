@@ -286,8 +286,9 @@ class SoundOSApp(tk.Tk):
             else:
                 self.after(0, lambda: self._log("I couldn't understand that.", "error"))
         except Exception as error:
+            error_message = str(error)
             self.after(0, lambda: self._finish_listening("Microphone unavailable"))
-            self.after(0, lambda: self._show_error(str(error)))
+            self.after(0, lambda message=error_message: self._show_error(message))
 
     def _finish_listening(self, status: str) -> None:
         self.is_listening = False
