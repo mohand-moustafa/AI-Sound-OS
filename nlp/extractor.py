@@ -9,7 +9,7 @@ import re
 
 APP_ALIASES = {
     "chrome": ["chrome", "google chrome", "browser"],
-    "firefox": ["firefox", "fire fox"],
+    "firefox": ["firefox", "fire fox", "fire folks", "fire foxes", "fire box"],
     "vscode": ["vs code", "vscode", "visual studio code", "code editor", "code"],
     "terminal": ["terminal", "console", "command line"],
     "calculator": ["calculator"],
@@ -34,6 +34,14 @@ def find_app(text):
         close = difflib.get_close_matches(words[-1], ALIAS_TO_APP, n=1, cutoff=0.75)
         if close:
             return ALIAS_TO_APP[close[0]]
+    # Whisper may split or slightly distort a familiar application name.
+    for phrase, app in (
+        ("fire folks", "firefox"),
+        ("fire foxes", "firefox"),
+        ("fire box", "firefox"),
+    ):
+        if phrase in t:
+            return app
     return None
 
 
