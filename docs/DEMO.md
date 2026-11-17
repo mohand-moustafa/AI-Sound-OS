@@ -27,6 +27,15 @@ the terminal, plus `docs/confusion_matrix.png` and `docs/errors.csv`.
 
 ## Run the assistant
 
+Launch the desktop interface:
+
+```bash
+python main.py
+```
+
+The GUI supports typed commands, one-command voice recording, safe dry-run
+preview, Vision commands, quick command buttons, and a live activity log.
+
 Use text mode first:
 
 ```bash
@@ -39,10 +48,10 @@ Use real Linux actions after validating the dry run:
 python main.py --text
 ```
 
-For microphone input with push-to-talk-style silence detection:
+For terminal microphone input with push-to-talk-style silence detection:
 
 ```bash
-python main.py
+python main.py --voice
 ```
 
 For wake-word mode:

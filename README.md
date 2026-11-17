@@ -22,9 +22,10 @@ cd sound-operating-system
 bash scripts/setup_linux.sh
 source .venv/bin/activate
 
-python main.py --text --dry-run   # type commands, nothing is executed
-python main.py --text             # type commands, Linux actions run
-python main.py                    # voice mode (microphone)
+python main.py                   # desktop GUI
+python main.py --text --dry-run  # terminal: type commands, nothing is executed
+python main.py --text            # terminal: type commands, Linux actions run
+python main.py --voice           # terminal voice mode (microphone)
 ```
 
 The repository includes a trained intent model after the training step. If
@@ -56,6 +57,10 @@ text. Install the OCR engine on Ubuntu with:
 ```bash
 sudo apt install -y tesseract-ocr
 ```
+
+The desktop GUI uses Python's built-in Tkinter toolkit, keeps the interface
+responsive while recording/transcribing, and exposes typed commands, voice
+commands, dry-run preview, quick commands, and an activity log.
 
 ## Folder structure
 

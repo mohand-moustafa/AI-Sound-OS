@@ -1,7 +1,8 @@
 """Sound Operating System - main program. Owner: Member 1.
 
 Run:
-    python main.py                      # voice mode (microphone + Whisper)
+    python main.py                      # desktop GUI
+    python main.py --voice               # voice mode (microphone + Whisper)
     python main.py --text               # type commands instead of speaking
     python main.py --text --dry-run     # type commands, do NOT run the Linux actions
 """
@@ -57,9 +58,15 @@ def run(text_mode=False, dry_run=False, wake_word=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Sound Operating System")
+    parser.add_argument("--gui", action="store_true", help="open the desktop interface")
+    parser.add_argument("--voice", action="store_true", help="run terminal voice mode")
     parser.add_argument("--text", action="store_true", help="type commands instead of speaking")
     parser.add_argument("--dry-run", action="store_true", help="do not execute Linux actions")
     parser.add_argument("--wake-word", action="store_true",
                         help="wait for 'hey sound' before recording each command")
     args = parser.parse_args()
-    run(text_mode=args.text, dry_run=args.dry_run, wake_word=args.wake_word)
+    if args.gui or not args.text and not args.voice and not args.wake_word:
+        from gui.app import launch
+        launch()
+    else:
+        run(text_mode=args.text, dry_run=args.dry_run, wake_word=args.wake_word)
