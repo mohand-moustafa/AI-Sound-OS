@@ -14,14 +14,17 @@ import pandas as pd
 from sklearn.metrics import ConfusionMatrixDisplay, classification_report
 
 import config
-from preprocessing.clean import cleaned_text_column
+from nlp.classifier import IntentClassifier
 
 
 def main():
     model = joblib.load(config.MODEL_PATH)
     test = pd.read_csv(config.PROCESSED_DIR / "test.csv")
     y_true = test["intent"]
-    y_pred = model.predict(cleaned_text_column(test))
+    # Evaluate the same prediction path used by the live assistant, including
+    # the explicit screen-command safety routing in IntentClassifier.
+    classifier = IntentClassifier(model_path=config.MODEL_PATH, threshold=config.THRESHOLD)
+    y_pred = [classifier.predict(text)[0] for text in test["text"]]
 
     report = classification_report(y_true, y_pred, digits=3)
     print(report)
@@ -36,7 +39,10 @@ def main():
     plt.savefig(config.DOCS_DIR / "confusion_matrix.png")
 
     errors = test[y_true != y_pred].copy()
-    errors["predicted"] = y_pred[(y_true != y_pred).values]
+    errors["predicted"] = [
+        prediction for prediction, wrong in zip(y_pred, y_true != y_pred)
+        if wrong
+    ]
     errors.to_csv(config.DOCS_DIR / "errors.csv", index=False)
     print("Saved docs/classification_report.txt, docs/confusion_matrix.png, "
           f"and docs/errors.csv ({len(errors)} mistakes)")

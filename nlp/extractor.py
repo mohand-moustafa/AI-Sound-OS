@@ -19,6 +19,7 @@ ALIAS_TO_APP = {alias: app for app, aliases in APP_ALIASES.items() for alias in 
 
 LOCATIONS = ["downloads", "documents", "desktop", "home"]
 _LOC = "|".join(LOCATIONS)
+_PATH_MARKER = r"(?:in|inside|under|at|from|within)"
 
 
 def find_app(text):
@@ -43,6 +44,40 @@ def find_location(text):
     return "home"
 
 
+def _clean_path(value):
+    value = re.sub(r"^(?:the|my)\s+", "", value.strip(), flags=re.I)
+    value = re.sub(r"\s+(?:folder|directory)$", "", value, flags=re.I)
+    return value.strip(" .!?/")
+
+
+def find_path(text):
+    """Find a Home-relative folder path, including nested custom folders."""
+    for loc in LOCATIONS:
+        if re.search(rf"\b{loc}\b", text.lower()):
+            return loc
+    match = re.search(
+        rf"\b{_PATH_MARKER}\s+(.+?)(?:\s+(?:folder|directory))?[.!?]*$",
+        text.strip(),
+        re.IGNORECASE,
+    )
+    return _clean_path(match.group(1)) if match else "home"
+
+
+def find_open_path(text):
+    """Find the target of an open/list command when it is a custom folder."""
+    match = re.search(
+        r"\b(?:open|access|go to|navigate to)\s+(?:the\s+|my\s+)?(.+?)"
+        r"(?:\s+(?:folder|directory))?[.!?]*$",
+        text.strip(),
+        re.IGNORECASE,
+    )
+    if not match:
+        return find_path(text)
+    value = re.sub(r"\s+(?:in|inside|under|at|from)\s+(?:the\s+|my\s+)?home$",
+                   "", match.group(1), flags=re.I)
+    return _clean_path(value)
+
+
 def find_name(text):
     """Get the folder/file name. Returns None if the user did not say one."""
     text = text.strip().rstrip(".!?")
@@ -56,8 +91,12 @@ def find_name(text):
             continue
         name = re.sub(r"^(the|a|an)\s+", "", m.group(1).strip(), flags=re.I)
         # remove "in downloads", "inside the documents folder", ...
-        name = re.sub(rf"\s*\b(in|inside|under|on)\s+(the\s+|my\s+)?({_LOC})(\s+folder)?$",
-                      "", name, flags=re.I).strip()
+        name = re.sub(
+            rf"\s*\b{_PATH_MARKER}\s+(.+?)(\s+folder)?$",
+            "",
+            name,
+            flags=re.I,
+        ).strip()
         if name and not re.match(rf"^(in|inside|under|on)\b", name, re.I):
             return name
     return None
@@ -68,7 +107,13 @@ def extract(intent, text):
     if intent in ("OPEN_APPLICATION", "CLOSE_APPLICATION"):
         return {"app": find_app(text)}
     if intent in ("CREATE_FOLDER", "CREATE_FILE"):
-        return {"name": find_name(text), "location": find_location(text)}
+        path = find_path(text)
+        key = "location" if path in LOCATIONS else "path"
+        return {"name": find_name(text), key: path}
     if intent in ("LIST_FILES", "OPEN_FOLDER"):
-        return {"location": find_location(text)}
+        path = find_open_path(text)
+        key = "location" if path in LOCATIONS else "path"
+        return {key: path}
+    if intent in ("TAKE_SCREENSHOT", "READ_SCREEN", "DESCRIBE_SCREEN"):
+        return {}
     return {}

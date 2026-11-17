@@ -12,7 +12,7 @@ Read [`PROJECT_PLAN.md`](PROJECT_PLAN.md) for the full plan, steps, and team rol
 
 ## Supported commands
 
-`OPEN_APPLICATION` · `CLOSE_APPLICATION` · `CREATE_FOLDER` · `CREATE_FILE` · `LIST_FILES` · `OPEN_FOLDER` · `SYSTEM_INFO` · `SHOW_DATE_TIME` · `UNKNOWN`
+`OPEN_APPLICATION` · `CLOSE_APPLICATION` · `CREATE_FOLDER` · `CREATE_FILE` · `LIST_FILES` · `OPEN_FOLDER` · `SYSTEM_INFO` · `SHOW_DATE_TIME` · `TAKE_SCREENSHOT` · `READ_SCREEN` · `DESCRIBE_SCREEN` · `UNKNOWN`
 
 ## Quick start
 
@@ -50,6 +50,13 @@ evaluation command writes `docs/classification_report.txt`,
 For the complete Ubuntu setup, wake-word flow, speech data collection, and
 known hardware limitations, see [`docs/DEMO.md`](docs/DEMO.md).
 
+Vision commands use `mss` for screenshots and Tesseract OCR for reading screen
+text. Install the OCR engine on Ubuntu with:
+
+```bash
+sudo apt install -y tesseract-ocr
+```
+
 ## Folder structure
 
 ```text
@@ -68,6 +75,7 @@ sound-operating-system/
 ├── nlp/                    # classifier.py, extractor.py
 ├── speech/                 # transcriber.py (Whisper)
 ├── commands/               # executor.py (Linux actions)
+├── vision/                 # screenshot capture and OCR
 ├── tests/
 ├── scripts/                # setup_linux.sh
 ├── docs/                   # report, slides, results

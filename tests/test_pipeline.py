@@ -14,6 +14,9 @@ CASES = [
     ("Open the Downloads folder", "OPEN_FOLDER"),
     ("Show system information", "SYSTEM_INFO"),
     ("What time is it", "SHOW_DATE_TIME"),
+    ("Take a screenshot", "TAKE_SCREENSHOT"),
+    ("Read the text on the screen", "READ_SCREEN"),
+    ("Describe the screen", "DESCRIBE_SCREEN"),
 ]
 
 

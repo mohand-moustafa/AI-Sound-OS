@@ -6,4 +6,7 @@ matplotlib
 faster-whisper
 sounddevice
 soundfile
+mss
+Pillow
+pytesseract
 pytest

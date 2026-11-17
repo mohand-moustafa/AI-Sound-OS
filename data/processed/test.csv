@@ -1,162 +1,173 @@
 text,intent,text_clean
-close command prompt utility,CLOSE_APPLICATION,close command prompt utility
-what is current time,SHOW_DATE_TIME,what is current time
-open firefox web browser,OPEN_APPLICATION,open firefox web browser
-make a csv file dataset.csv,CREATE_FILE,make a csv file dataset csv
-create file config.json,CREATE_FILE,create file config json
-show items in temporary storage,LIST_FILES,show items in temporary storage
-open backup library folder,OPEN_FOLDER,open backup library folder
-quit firefox browser,CLOSE_APPLICATION,quit firefox browser
-how much is this car,UNKNOWN,how much is this car
-open documents directory,OPEN_FOLDER,open documents directory
-exit control center settings,CLOSE_APPLICATION,exit control center settings
-launch pc configurations,OPEN_APPLICATION,launch pc configurations
-run a new command prompt,OPEN_APPLICATION,run a new command prompt
-close sound settings panel,CLOSE_APPLICATION,close sound settings panel
-tell me a tech joke,UNKNOWN,tell me a tech joke
-create a file named notes.txt,CREATE_FILE,create a file named notes txt
-exit chrome web browser,CLOSE_APPLICATION,exit chrome web browser
-create text document summary.txt,CREATE_FILE,create text document summary txt
-make folder code,CREATE_FOLDER,make folder code
-run terminal,OPEN_APPLICATION,run terminal
-close visual studio code app,CLOSE_APPLICATION,close visual studio code app
-open firefox browser now,OPEN_APPLICATION,open firefox browser now
-open media player app,OPEN_APPLICATION,open media player app
-list all files in workspace,LIST_FILES,list all files in workspace
-please open firefox browser,OPEN_APPLICATION,please open firefox browser
-launch chrome right now,OPEN_APPLICATION,launch chrome right now
-launch media player,OPEN_APPLICATION,launch media player
-tell me today's exact date,SHOW_DATE_TIME,tell me today s exact date
-please open terminal shell,OPEN_APPLICATION,please open terminal shell
-what is the current year and month,SHOW_DATE_TIME,what is the current year and month
-open folder for desktop,OPEN_FOLDER,open folder for desktop
-make a folder for documents,CREATE_FOLDER,make a folder for documents
-close command prompt interface,CLOSE_APPLICATION,close command prompt interface
-what is the temperature today,UNKNOWN,what is the temperature today
-display memory usage,SYSTEM_INFO,display memory usage
-create text file requirements.txt,CREATE_FILE,create text file requirements txt
-start the code editor,OPEN_APPLICATION,start the code editor
-create a file named todo.md,CREATE_FILE,create a file named todo md
-shut down firefox,CLOSE_APPLICATION,shut down firefox
-close control panel settings,CLOSE_APPLICATION,close control panel settings
-play some jazz instrumentals,UNKNOWN,play some jazz instrumentals
-open browser application,OPEN_APPLICATION,open browser application
-quit visual studio code,CLOSE_APPLICATION,quit visual studio code
-run a command line window,OPEN_APPLICATION,run a command line window
-make a new folder called data,CREATE_FOLDER,make a new folder called data
-what is the recipe for cake,UNKNOWN,what is the recipe for cake
-show files in downloads,LIST_FILES,show files in downloads
-open system options,OPEN_APPLICATION,open system options
-what is your favorite outdoor activity,UNKNOWN,what is your favorite outdoor activity
-what exact time is it now,SHOW_DATE_TIME,what exact time is it now
-launch the google chrome tool,OPEN_APPLICATION,launch the google chrome tool
-make folder outputs,CREATE_FOLDER,make folder outputs
-start vlc player,OPEN_APPLICATION,start vlc player
-show directory files,LIST_FILES,show directory files
-open folder pictures,OPEN_FOLDER,open folder pictures
-close terminal command console,CLOSE_APPLICATION,close terminal command console
-close computer settings,CLOSE_APPLICATION,close computer settings
-show available ram memory,SYSTEM_INFO,show available ram memory
-create directory logs,CREATE_FOLDER,create directory logs
-tell me a smart tech joke,UNKNOWN,tell me a smart tech joke
-open chrome browser instantly,OPEN_APPLICATION,open chrome browser instantly
-tell me a joke about programming,UNKNOWN,tell me a joke about programming
-open pictures folder,OPEN_FOLDER,open pictures folder
-launch powershell terminal,OPEN_APPLICATION,launch powershell terminal
-stop media player program,CLOSE_APPLICATION,stop media player program
-navigate to project directory,OPEN_FOLDER,navigate to project directory
-display files in folder,LIST_FILES,display files in folder
-display full hardware stats,SYSTEM_INFO,display full hardware stats
-access downloads directory,OPEN_FOLDER,access downloads directory
-create directory called backup_data,CREATE_FOLDER,create directory called backup_data
-show me directory contents,LIST_FILES,show me directory contents
-open terminal console,OPEN_APPLICATION,open terminal console
-what is your favourite book,UNKNOWN,what is your favourite book
-kill vs code,CLOSE_APPLICATION,kill vs code
-launch google chrome web browser,OPEN_APPLICATION,launch google chrome web browser
-open settings app,OPEN_APPLICATION,open settings app
-check system specs,SYSTEM_INFO,check system specs
-open visual studio code now,OPEN_APPLICATION,open visual studio code now
-call mom on the phone,UNKNOWN,call mom on the phone
-make directory for temporary files,CREATE_FOLDER,make directory for temporary files
-can you set an alarm for me,UNKNOWN,can you set an alarm for me
-make a folder called projects,CREATE_FOLDER,make a folder called projects
-tell me what day it is today,SHOW_DATE_TIME,tell me what day it is today
-what is the weather today,UNKNOWN,what is the weather today
-open my pictures folder,OPEN_FOLDER,open my pictures folder
-open target library folder,OPEN_FOLDER,open target library folder
-start vlc video player software,OPEN_APPLICATION,start vlc video player software
-start vlc,OPEN_APPLICATION,start vlc
-tell me a fact,UNKNOWN,tell me a fact
-check cpu thread count,SYSTEM_INFO,check cpu thread count
-close google chrome web browser,CLOSE_APPLICATION,close google chrome web browser
-make directory for distributions,CREATE_FOLDER,make directory for distributions
-list files in processed directory,LIST_FILES,list files in processed directory
-shut down powershell,CLOSE_APPLICATION,shut down powershell
-launch the web browser application,OPEN_APPLICATION,launch the web browser application
-check system cpu temperature,SYSTEM_INFO,check system cpu temperature
-current date and time please,SHOW_DATE_TIME,current date and time please
-who is your developer,UNKNOWN,who is your developer
-display directory file list,LIST_FILES,display directory file list
-what time is it right now locally,SHOW_DATE_TIME,what time is it right now locally
-display project file list,LIST_FILES,display project file list
-open folder temp,OPEN_FOLDER,open folder temp
-what is my cpu and ram status,SYSTEM_INFO,what is my cpu and ram status
-list all files in directory path,LIST_FILES,list all files in directory path
-make a python file named app.py,CREATE_FILE,make a python file named app py
-make a new directory named documents,CREATE_FOLDER,make a new directory named documents
-show system memory specifications,SYSTEM_INFO,show system memory specifications
-who are you,UNKNOWN,who are you
-open computer settings,OPEN_APPLICATION,open computer settings
-what can you do for me,UNKNOWN,what can you do for me
-terminate chrome web session,CLOSE_APPLICATION,terminate chrome web session
-tell me the time,SHOW_DATE_TIME,tell me the time
-display hardware performance,SYSTEM_INFO,display hardware performance
-create text log file debug.log,CREATE_FILE,create text log file debug log
-make a python script file train.py,CREATE_FILE,make a python script file train py
-tell me the current date format,SHOW_DATE_TIME,tell me the current date format
-open mozilla firefox app,OPEN_APPLICATION,open mozilla firefox app
-show all items in workspace,LIST_FILES,show all items in workspace
-please open system settings,OPEN_APPLICATION,please open system settings
-display full system report,SYSTEM_INFO,display full system report
-create a new folder now,CREATE_FOLDER,create a new folder now
-open the downloads folder,OPEN_FOLDER,open the downloads folder
-tell me a clever programming joke,UNKNOWN,tell me a clever programming joke
-make a csv file,CREATE_FILE,make a csv file
-can you set an alarm for morning,UNKNOWN,can you set an alarm for morning
-exit the application now,CLOSE_APPLICATION,exit the application now
-close system settings,CLOSE_APPLICATION,close system settings
-tell me something interesting,UNKNOWN,tell me something interesting
-launch powershell window,OPEN_APPLICATION,launch powershell window
-exit control panel menu,CLOSE_APPLICATION,exit control panel menu
-tell me today's date and time,SHOW_DATE_TIME,tell me today s date and time
-close mozilla firefox browser now,CLOSE_APPLICATION,close mozilla firefox browser now
-make a python script helper.py,CREATE_FILE,make a python script helper py
-can you cook food,UNKNOWN,can you cook food
-create file script.py,CREATE_FILE,create file script py
-check cpu performance metrics,SYSTEM_INFO,check cpu performance metrics
-start vlc player application,OPEN_APPLICATION,start vlc player application
-create folder desktop data,CREATE_FOLDER,create folder desktop data
-open folder named build,OPEN_FOLDER,open folder named build
-can you write a poem for me,UNKNOWN,can you write a poem for me
-please close visual studio code,CLOSE_APPLICATION,please close visual studio code
-open folder my pictures,OPEN_FOLDER,open folder my pictures
-what day is it today,SHOW_DATE_TIME,what day is it today
-run terminal emulator,OPEN_APPLICATION,run terminal emulator
-list project folder contents,LIST_FILES,list project folder contents
-can you launch browser,OPEN_APPLICATION,can you launch browser
-show current time,SHOW_DATE_TIME,show current time
-system performance status,SYSTEM_INFO,system performance status
-terminate code editor workspace,CLOSE_APPLICATION,terminate code editor workspace
-tell me the exact current time,SHOW_DATE_TIME,tell me the exact current time
-can you start chrome right now,OPEN_APPLICATION,can you start chrome right now
-terminate chrome browser session,CLOSE_APPLICATION,terminate chrome browser session
-check cpu load,SYSTEM_INFO,check cpu load
-open visual studio code editor now,OPEN_APPLICATION,open visual studio code editor now
-exit pc configurations,CLOSE_APPLICATION,exit pc configurations
-play some relaxing music,UNKNOWN,play some relaxing music
-play a upbeat pop song,UNKNOWN,play a upbeat pop song
-exit code workspace tool,CLOSE_APPLICATION,exit code workspace tool
-close system preferences window,CLOSE_APPLICATION,close system preferences window
-make a markdown readme file,CREATE_FILE,make a markdown readme file
 create a folder for source code,CREATE_FOLDER,create a folder for source code
+make a folder called projects,CREATE_FOLDER,make a folder called projects
+create folder desktop data,CREATE_FOLDER,create folder desktop data
+go to reports folder path,OPEN_FOLDER,go to reports folder path
+exit the application now,CLOSE_APPLICATION,exit the application now
+exit chrome web browser,CLOSE_APPLICATION,exit chrome web browser
+start the code editor,OPEN_APPLICATION,start the code editor
+tell me a funny story,UNKNOWN,tell me a funny story
+shut down powershell,CLOSE_APPLICATION,shut down powershell
+what time is it on the clock,SHOW_DATE_TIME,what time is it on the clock
+quit firefox browser,CLOSE_APPLICATION,quit firefox browser
+open settings panel,OPEN_APPLICATION,open settings panel
+show me the date,SHOW_DATE_TIME,show me the date
+make a new folder called data,CREATE_FOLDER,make a new folder called data
+list all files,LIST_FILES,list all files
+what is today's full date readout,SHOW_DATE_TIME,what is today s full date readout
+play some instrumentals,UNKNOWN,play some instrumentals
+play a song for me,UNKNOWN,play a song for me
+display code file list,LIST_FILES,display code file list
+show battery status,SYSTEM_INFO,show battery status
+open folder for downloads,OPEN_FOLDER,open folder for downloads
+screen capture please,TAKE_SCREENSHOT,screen capture please
+capture the whole display,TAKE_SCREENSHOT,capture the whole display
+play some acoustic guitar music,UNKNOWN,play some acoustic guitar music
+make directory for distributions,CREATE_FOLDER,make directory for distributions
+display files in folder,LIST_FILES,display files in folder
+show system specifications,SYSTEM_INFO,show system specifications
+open the settings menu,OPEN_APPLICATION,open the settings menu
+launch mozilla,OPEN_APPLICATION,launch mozilla
+create text document summary.txt,CREATE_FILE,create text document summary txt
+what time is it right now please,SHOW_DATE_TIME,what time is it right now please
+open documents directory,OPEN_FOLDER,open documents directory
+can you sing a song,UNKNOWN,can you sing a song
+check system cpu utilization,SYSTEM_INFO,check system cpu utilization
+kill vs code,CLOSE_APPLICATION,kill vs code
+navigate to documents path,OPEN_FOLDER,navigate to documents path
+extract text from the screen,READ_SCREEN,extract text from the screen
+who is the president of the country,UNKNOWN,who is the president of the country
+run a new command prompt,OPEN_APPLICATION,run a new command prompt
+launch pc configurations,OPEN_APPLICATION,launch pc configurations
+make a folder named backups inside documents,CREATE_FOLDER,make a folder named backups inside documents
+please open terminal shell,OPEN_APPLICATION,please open terminal shell
+use ocr on the screen,READ_SCREEN,use ocr on the screen
+summarize the screen,DESCRIBE_SCREEN,summarize the screen
+open mozilla firefox web tool,OPEN_APPLICATION,open mozilla firefox web tool
+stop media player program,CLOSE_APPLICATION,stop media player program
+close mozilla firefox browser now,CLOSE_APPLICATION,close mozilla firefox browser now
+close command prompt interface,CLOSE_APPLICATION,close command prompt interface
+start chrome web session,OPEN_APPLICATION,start chrome web session
+close command prompt tool,CLOSE_APPLICATION,close command prompt tool
+go to documents folder,OPEN_FOLDER,go to documents folder
+tell me what appears on my desktop,DESCRIBE_SCREEN,tell me what appears on my desktop
+play some relaxing lo-fi,UNKNOWN,play some relaxing lo fi
+open up google chrome browser,OPEN_APPLICATION,open up google chrome browser
+turn on the living room lights,UNKNOWN,turn on the living room lights
+open terminal shell window,OPEN_APPLICATION,open terminal shell window
+tell me today's day name,SHOW_DATE_TIME,tell me today s day name
+create directory logs,CREATE_FOLDER,create directory logs
+make a csv file,CREATE_FILE,make a csv file
+open document library folder,OPEN_FOLDER,open document library folder
+please close visual studio code,CLOSE_APPLICATION,please close visual studio code
+quit visual studio code workspace,CLOSE_APPLICATION,quit visual studio code workspace
+close terminal command console,CLOSE_APPLICATION,close terminal command console
+can you set a 5 minute timer,UNKNOWN,can you set a 5 minute timer
+record a screenshot of the display,TAKE_SCREENSHOT,record a screenshot of the display
+show available system storage RAM,SYSTEM_INFO,show available system storage ram
+check system cpu load status,SYSTEM_INFO,check system cpu load status
+tell me a funny story please,UNKNOWN,tell me a funny story please
+please open system settings,OPEN_APPLICATION,please open system settings
+create text file requirements.txt,CREATE_FILE,create text file requirements txt
+display file list,LIST_FILES,display file list
+open desktop directory,OPEN_FOLDER,open desktop directory
+terminate chrome browser session,CLOSE_APPLICATION,terminate chrome browser session
+open firefox browser now,OPEN_APPLICATION,open firefox browser now
+make directory for temporary files,CREATE_FOLDER,make directory for temporary files
+open folder for user data,OPEN_FOLDER,open folder for user data
+show files in current folder,LIST_FILES,show files in current folder
+start mozilla application,OPEN_APPLICATION,start mozilla application
+shut down firefox,CLOSE_APPLICATION,shut down firefox
+what is the weather today,UNKNOWN,what is the weather today
+open settings control panel,OPEN_APPLICATION,open settings control panel
+terminate command line window,CLOSE_APPLICATION,terminate command line window
+what is your favourite book,UNKNOWN,what is your favourite book
+open folder python projects,OPEN_FOLDER,open folder python projects
+create a file named notes.txt,CREATE_FILE,create a file named notes txt
+create file log.txt,CREATE_FILE,create file log txt
+run terminal emulator,OPEN_APPLICATION,run terminal emulator
+make a python file named app.py,CREATE_FILE,make a python file named app py
+terminate code editor workspace,CLOSE_APPLICATION,terminate code editor workspace
+run terminal,OPEN_APPLICATION,run terminal
+exit control center settings,CLOSE_APPLICATION,exit control center settings
+make a csv file dataset.csv,CREATE_FILE,make a csv file dataset csv
+tell me today's exact date,SHOW_DATE_TIME,tell me today s exact date
+play some relaxing music,UNKNOWN,play some relaxing music
+display hardware status,SYSTEM_INFO,display hardware status
+close command prompt utility,CLOSE_APPLICATION,close command prompt utility
+show available system memory,SYSTEM_INFO,show available system memory
+show ram details,SYSTEM_INFO,show ram details
+close system settings,CLOSE_APPLICATION,close system settings
+what is inside the desktop folder,LIST_FILES,what is inside the desktop folder
+can you start chrome right now,OPEN_APPLICATION,can you start chrome right now
+make folder research,CREATE_FOLDER,make folder research
+make folder code,CREATE_FOLDER,make folder code
+tell me a clever programming joke,UNKNOWN,tell me a clever programming joke
+what exact time is it now,SHOW_DATE_TIME,what exact time is it now
+who is the president,UNKNOWN,who is the president
+create folder assets,CREATE_FOLDER,create folder assets
+make a new directory named documents,CREATE_FOLDER,make a new directory named documents
+open video library folder,OPEN_FOLDER,open video library folder
+display folder contents now,LIST_FILES,display folder contents now
+launch media player,OPEN_APPLICATION,launch media player
+can you launch browser,OPEN_APPLICATION,can you launch browser
+who maintains this software project,UNKNOWN,who maintains this software project
+open audio player application,OPEN_APPLICATION,open audio player application
+exit code workspace tool,CLOSE_APPLICATION,exit code workspace tool
+start vlc video player software,OPEN_APPLICATION,start vlc video player software
+close google chrome web browser,CLOSE_APPLICATION,close google chrome web browser
+create text log file debug.log,CREATE_FILE,create text log file debug log
+open media library folder,OPEN_FOLDER,open media library folder
+open display settings panel,OPEN_APPLICATION,open display settings panel
+launch chrome right now,OPEN_APPLICATION,launch chrome right now
+tell me an interesting riddle,UNKNOWN,tell me an interesting riddle
+who is the lead developer,UNKNOWN,who is the lead developer
+tell me today's date in full,SHOW_DATE_TIME,tell me today s date in full
+what can you see on the display,DESCRIBE_SCREEN,what can you see on the display
+who is your creator,UNKNOWN,who is your creator
+list all files in assets folder,LIST_FILES,list all files in assets folder
+open folder named music,OPEN_FOLDER,open folder named music
+open visual studio code now,OPEN_APPLICATION,open visual studio code now
+who created this application,UNKNOWN,who created this application
+create directory called backup_data,CREATE_FOLDER,create directory called backup_data
+show available system RAM,SYSTEM_INFO,show available system ram
+open folder for development,OPEN_FOLDER,open folder for development
+open mozilla firefox browser,OPEN_APPLICATION,open mozilla firefox browser
+create text file description.txt,CREATE_FILE,create text file description txt
+display logs directory contents,LIST_FILES,display logs directory contents
+make a python script file train.py,CREATE_FILE,make a python script file train py
+open system options,OPEN_APPLICATION,open system options
+what day is today,SHOW_DATE_TIME,what day is today
+open vlc player software,OPEN_APPLICATION,open vlc player software
+create a file named todo.md,CREATE_FILE,create a file named todo md
+tell me the current time,SHOW_DATE_TIME,tell me the current time
+show cpu specs,SYSTEM_INFO,show cpu specs
+close visual studio code app,CLOSE_APPLICATION,close visual studio code app
+close control panel settings,CLOSE_APPLICATION,close control panel settings
+create file script.py,CREATE_FILE,create file script py
+quit visual studio code,CLOSE_APPLICATION,quit visual studio code
+please launch firefox browser,OPEN_APPLICATION,please launch firefox browser
+display hardware performance,SYSTEM_INFO,display hardware performance
+create file requirements.txt,CREATE_FILE,create file requirements txt
+who programmed this assistant,UNKNOWN,who programmed this assistant
+show all items in workspace,LIST_FILES,show all items in workspace
+open folder for projects,OPEN_FOLDER,open folder for projects
+exit the google chrome tool,CLOSE_APPLICATION,exit the google chrome tool
+open computer settings,OPEN_APPLICATION,open computer settings
+start vlc player,OPEN_APPLICATION,start vlc player
+what is the memory usage,SYSTEM_INFO,what is the memory usage
+show items in current path,LIST_FILES,show items in current path
+start the firefox app,OPEN_APPLICATION,start the firefox app
+open code editor window,OPEN_APPLICATION,open code editor window
+what day is it today,SHOW_DATE_TIME,what day is it today
+extract the visible words,READ_SCREEN,extract the visible words
+close system preferences window,CLOSE_APPLICATION,close system preferences window
+what is your favorite song,UNKNOWN,what is your favorite song
+close settings app,CLOSE_APPLICATION,close settings app
+check cpu core usage,SYSTEM_INFO,check cpu core usage
+list documents folder contents,LIST_FILES,list documents folder contents
+start the chrome application,OPEN_APPLICATION,start the chrome application
+tell me a fun trivia fact,UNKNOWN,tell me a fun trivia fact
+what date is today,SHOW_DATE_TIME,what date is today
+list all files in folder,LIST_FILES,list all files in folder
+tell me the current date details,SHOW_DATE_TIME,tell me the current date details

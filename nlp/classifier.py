@@ -35,6 +35,15 @@ def _keyword_stub(text):
         return "SYSTEM_INFO", 0.90
     if has("time", "date"):
         return "SHOW_DATE_TIME", 0.90
+    if has("read", "ocr") and has("screen", "screenshot"):
+        return "READ_SCREEN", 0.90
+    if has("read") and has("screen"):
+        return "READ_SCREEN", 0.90
+    if has("describe", "summarize", "summary", "visible", "overview",
+           "analyze", "explain", "report", "see") and has("screen", "display"):
+        return "DESCRIBE_SCREEN", 0.90
+    if has("screenshot", "screen", "capture", "snap"):
+        return "TAKE_SCREENSHOT", 0.90
     return "UNKNOWN", 0.90
 
 
@@ -50,6 +59,9 @@ class IntentClassifier:
 
     def predict(self, text):
         """Return (intent, confidence). Low confidence -> UNKNOWN."""
+        direct = self._direct_intent(text)
+        if direct:
+            return direct, 0.99
         if self.model is None:
             return _keyword_stub(text)
 
@@ -60,3 +72,19 @@ class IntentClassifier:
         if confidence < self.threshold:
             return "UNKNOWN", confidence
         return intent, confidence
+
+    @staticmethod
+    def _direct_intent(text):
+        """Handle safety-critical, unambiguous screen commands explicitly."""
+        words = set(clean_text(text).split())
+        screen_words = {"screen", "screenshot", "desktop", "display", "monitor", "window"}
+        if not words.intersection(screen_words):
+            return None
+        if "read" in words or "ocr" in words:
+            return "READ_SCREEN"
+        if {"describe", "summarize", "summary", "visible", "overview",
+            "analyze", "explain", "report", "see"} & words:
+            return "DESCRIBE_SCREEN"
+        if {"take", "capture", "save", "snapshot", "screenshot"} & words:
+            return "TAKE_SCREENSHOT"
+        return None

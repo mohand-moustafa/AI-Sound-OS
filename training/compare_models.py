@@ -27,6 +27,7 @@ MODELS = {
 
 def main():
     train = pd.read_csv(config.PROCESSED_DIR / "train.csv")
+    train = train[train["intent"].isin(config.CLASSIFIER_INTENTS)]
     text = cleaned_text_column(train)
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 

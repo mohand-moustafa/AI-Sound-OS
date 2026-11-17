@@ -25,6 +25,7 @@ def build_model():
 
 def main():
     train = pd.read_csv(config.PROCESSED_DIR / "train.csv")
+    train = train[train["intent"].isin(config.CLASSIFIER_INTENTS)]
     model = build_model()
     model.fit(cleaned_text_column(train), train["intent"])
     config.MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -35,6 +36,7 @@ def main():
         "training_data": str(config.PROCESSED_DIR / "train.csv"),
         "training_rows": len(train),
         "labels": sorted(train["intent"].unique().tolist()),
+        "explicit_intents": ["TAKE_SCREENSHOT", "READ_SCREEN", "DESCRIBE_SCREEN"],
         "random_state": 42,
         "confidence_threshold": config.THRESHOLD,
         "scikit_learn_version": sklearn.__version__,

@@ -35,3 +35,17 @@ def test_dry_run_does_not_create(tmp_path, monkeypatch):
     monkeypatch.setenv("HOME", str(tmp_path))
     execute("CREATE_FOLDER", {"name": "Nope"}, dry_run=True)
     assert not (tmp_path / "Nope").exists()
+
+
+def test_custom_nested_folder_path(tmp_path, monkeypatch):
+    monkeypatch.setenv("HOME", str(tmp_path))
+    (tmp_path / "projects").mkdir()
+    result = execute("CREATE_FILE", {"name": "notes.txt", "path": "projects"})
+    assert result.success
+    assert (tmp_path / "projects" / "notes.txt").is_file()
+
+
+def test_custom_path_cannot_escape_home(tmp_path, monkeypatch):
+    monkeypatch.setenv("HOME", str(tmp_path))
+    result = execute("LIST_FILES", {"path": "../outside"})
+    assert not result.success

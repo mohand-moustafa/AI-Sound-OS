@@ -3,8 +3,8 @@
 Safety rules:
   - never use shell=True
   - only run apps from OPEN_COMMANDS
-  - only create files/folders inside the home folder
-  - names cannot contain "/" or ".."
+  - only access paths inside the home folder
+  - names cannot contain ".."
 """
 import os
 import platform
@@ -36,12 +36,35 @@ OPEN_COMMANDS = {
 PROCESS_NAMES = {"chrome": "chrome", "firefox": "firefox", "vscode": "code"}
 
 FOLDERS = {"home": "", "downloads": "Downloads", "documents": "Documents", "desktop": "Desktop"}
-SAFE_NAME = re.compile(r"^[\w\- .]{1,50}$")
+SAFE_NAME = re.compile(r"^[\w\- .]{1,80}$")
 
 
 def location_path(location):
     home = Path(os.environ.get("HOME") or Path.home())
     return home / FOLDERS.get(location or "home", "")
+
+
+def home_path(relative):
+    """Resolve a user-supplied relative path without leaving HOME."""
+    home = Path(os.environ.get("HOME") or Path.home()).resolve()
+    value = str(relative or "home").strip().replace("\\", "/")
+    if value in ("", ".", "~", "home"):
+        return home
+    if value.startswith("/") or value.startswith("~") or re.match(r"^[A-Za-z]:", value):
+        raise ValueError("Only paths inside the home folder are allowed")
+    parts = [part.strip() for part in value.split("/") if part.strip()]
+    if not parts or any(part in (".", "..") or not SAFE_NAME.match(part) for part in parts):
+        raise ValueError(f"Invalid folder path: {relative!r}")
+    path = (home.joinpath(*parts)).resolve()
+    if home != path and home not in path.parents:
+        raise ValueError("The path is outside the allowed folder")
+    return path
+
+
+def target_path(params):
+    if params.get("path"):
+        return home_path(params["path"])
+    return location_path(params.get("location"))
 
 
 def safe_path(base, name):
@@ -79,19 +102,21 @@ def close_app(p):
 
 
 def create_folder(p):
-    path = safe_path(location_path(p.get("location")), p.get("name") or "New Folder")
+    path = safe_path(target_path(p), p.get("name") or "New Folder")
     path.mkdir(parents=True, exist_ok=True)
     return Result(True, f"Created folder: {path}")
 
 
 def create_file(p):
-    path = safe_path(location_path(p.get("location")), p.get("name") or "new_file.txt")
+    path = safe_path(target_path(p), p.get("name") or "new_file.txt")
     path.touch()
     return Result(True, f"Created file: {path}")
 
 
 def list_files(p):
-    folder = location_path(p.get("location"))
+    folder = target_path(p)
+    if not folder.is_dir():
+        raise OSError(f"Folder does not exist: {folder}")
     names = sorted(x.name for x in folder.iterdir())
     shown = "\n".join(names[:30]) or "(empty)"
     more = f"\n... and {len(names) - 30} more" if len(names) > 30 else ""
@@ -99,7 +124,9 @@ def list_files(p):
 
 
 def open_folder(p):
-    folder = location_path(p.get("location"))
+    folder = target_path(p)
+    if not folder.is_dir():
+        raise OSError(f"Folder does not exist: {folder}")
     _spawn(["xdg-open", str(folder)])
     return Result(True, f"Opening {folder}")
 
@@ -120,6 +147,16 @@ def show_date_time(p):
     return Result(True, datetime.now().strftime("It is %A, %d %B %Y, %H:%M"))
 
 
+def vision_action(intent):
+    from vision.screen import describe_screen, read_screen, take_screenshot
+
+    if intent == "TAKE_SCREENSHOT":
+        return Result(True, take_screenshot())
+    if intent == "READ_SCREEN":
+        return Result(True, read_screen())
+    return Result(True, describe_screen())
+
+
 HANDLERS = {
     "OPEN_APPLICATION": open_app,
     "CLOSE_APPLICATION": close_app,
@@ -129,6 +166,9 @@ HANDLERS = {
     "OPEN_FOLDER": open_folder,
     "SYSTEM_INFO": system_info,
     "SHOW_DATE_TIME": show_date_time,
+    "TAKE_SCREENSHOT": lambda p: vision_action("TAKE_SCREENSHOT"),
+    "READ_SCREEN": lambda p: vision_action("READ_SCREEN"),
+    "DESCRIBE_SCREEN": lambda p: vision_action("DESCRIBE_SCREEN"),
 }
 
 
