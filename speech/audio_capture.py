@@ -162,6 +162,7 @@ def record_until_silence(
     sample_rate: int = SAMPLE_RATE,
     on_status: Optional[Callable[[str], None]] = None,
     stream_factory: Optional[Callable] = None,
+    stop_check: Optional[Callable[[], bool]] = None,
 ) -> Optional[np.ndarray]:
     """
     Push-to-talk style recording: record one command, stop when speaker is silent.
@@ -184,7 +185,7 @@ def record_until_silence(
         audio = collect_utterance(
             stream, threshold, max_len=max_duration, end_silence=silence_duration,
             wait_timeout=wait_timeout, min_speech=min_speech_duration,
-            sample_rate=sample_rate)
+            stop_check=stop_check, sample_rate=sample_rate)
     status("CAPTURED" if audio is not None else "NO_SPEECH")
     return audio
 
