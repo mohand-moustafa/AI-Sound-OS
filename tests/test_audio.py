@@ -80,6 +80,14 @@ def test_too_short_click_is_ignored():
     assert record_until_silence(stream_factory=lambda: FakeStream(sig)) is None
 
 
+def test_record_can_be_stopped_by_callback():
+    audio = record_until_silence(
+        stream_factory=lambda: FakeStream(silence(2)),
+        stop_check=lambda: True,
+    )
+    assert audio is None
+
+
 # ---------------------------------------------------------------- wake word
 def test_wake_phrase_matching():
     assert is_wake_phrase("Hey, sound!")
