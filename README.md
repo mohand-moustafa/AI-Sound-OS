@@ -59,8 +59,10 @@ sudo apt install -y tesseract-ocr
 ```
 
 The desktop GUI uses Python's built-in Tkinter toolkit, keeps the interface
-responsive while recording/transcribing, and exposes typed commands, voice
-commands, dry-run preview, quick commands, and an activity log.
+responsive while recording/transcribing, and starts hands-free wake-word mode
+automatically. Say "hey sound" followed by a command; the GUI returns to wake
+word listening after every command. Typed commands, dry-run preview, quick
+commands, and an activity log remain available.
 
 ## Folder structure
 
