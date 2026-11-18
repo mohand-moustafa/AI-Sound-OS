@@ -33,8 +33,11 @@ Launch the desktop interface:
 python main.py
 ```
 
-The GUI supports typed commands, one-command voice recording, safe dry-run
-preview, Vision commands, quick command buttons, and a live activity log.
+The GUI starts hands-free wake-word mode automatically. Say “hey sound”, wait
+for the listening status, and then say the command. It returns to waiting for
+the wake word after every command. Typed commands, safe dry-run preview,
+Vision commands, quick command buttons, and a live activity log are also
+available. Use the GUI button only when you want to stop or restart wake mode.
 
 Use text mode first:
 

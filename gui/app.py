@@ -55,10 +55,12 @@ class SoundOSApp(tk.Tk):
         self.classifier = IntentClassifier()
         self.is_listening = False
         self.stop_event = threading.Event()
+        self.wake_listener = None
         self.history: list[dict] = []
         self._setup_styles()
         self._build_ui()
         self._set_status("Ready to listen", SUCCESS)
+        self.after(350, self._start_wake_mode)
 
     def _setup_styles(self) -> None:
         style = ttk.Style(self)
@@ -159,7 +161,7 @@ class SoundOSApp(tk.Tk):
         self.command_entry.bind("<Return>", lambda _event: self._run_typed_command())
         ttk.Button(command_card, text="Run command", style="Accent.TButton",
                    command=self._run_typed_command).grid(row=1, column=1, padx=(0, 8))
-        self.listen_button = ttk.Button(command_card, text="🎙  Listen",
+        self.listen_button = ttk.Button(command_card, text="■  Stop wake mode",
                                         style="Secondary.TButton", command=self._toggle_listening)
         self.listen_button.grid(row=1, column=2)
         self.dry_run_var = tk.BooleanVar(value=False)
@@ -255,13 +257,54 @@ class SoundOSApp(tk.Tk):
     def _toggle_listening(self) -> None:
         if self.is_listening:
             self.stop_event.set()
+            if self.wake_listener is not None:
+                self.wake_listener.stop()
+            return
+        self._start_wake_mode()
+
+    def _start_wake_mode(self) -> None:
+        if self.is_listening:
             return
         self.is_listening = True
         self.stop_event.clear()
-        self.listen_button.configure(text="■  Stop listening")
-        self._set_status("Listening…", ACCENT_HOVER)
-        self._log("Listening for a command…", "accent")
-        threading.Thread(target=self._listen_worker, daemon=True).start()
+        self.listen_button.configure(text="■  Stop wake mode")
+        self._set_status('Say "hey sound"', ACCENT_HOVER)
+        self._log('Wake-word mode active. Say "hey sound", then your command.', "accent")
+        threading.Thread(target=self._wake_worker, daemon=True).start()
+
+    def _wake_worker(self) -> None:
+        try:
+            from speech.transcriber import transcribe
+            from speech.wake_word import WakeWordListener
+
+            def on_status(message: str) -> None:
+                labels = {
+                    "LOADING_MODEL": "Loading speech model…",
+                    "WAITING_FOR_WAKE_WORD": 'Say "hey sound"',
+                    "WAKE_WORD_DETECTED": "Wake word detected",
+                    "LISTENING": "Listening for command…",
+                    "NO_SPEECH_TIMEOUT": "No command heard",
+                }
+                label = labels.get(message, message.replace("_", " ").title())
+                self.after(0, lambda value=label: self._set_status(value, ACCENT_HOVER))
+
+            self.wake_listener = WakeWordListener(on_status=on_status)
+            while not self.stop_event.is_set():
+                audio = self.wake_listener.listen_for_command()
+                if audio is None or self.stop_event.is_set():
+                    break
+                text = transcribe(audio)
+                if text:
+                    self.after(0, lambda value=text: self._run_command_async(value))
+                else:
+                    self.after(0, lambda: self._log("I couldn't understand that.", "error"))
+            self.after(0, lambda: self._finish_wake_mode("Wake mode stopped"))
+        except Exception as error:
+            error_message = str(error)
+            self.after(0, lambda: self._finish_wake_mode("Microphone unavailable"))
+            self.after(0, lambda message=error_message: self._show_error(message))
+        finally:
+            self.wake_listener = None
 
     def _listen_worker(self) -> None:
         try:
@@ -293,8 +336,14 @@ class SoundOSApp(tk.Tk):
     def _finish_listening(self, status: str) -> None:
         self.is_listening = False
         self.stop_event.clear()
-        self.listen_button.configure(text="🎙  Listen")
+        self.listen_button.configure(text="▶  Start wake mode")
         self._set_status(status, SUCCESS if status == "Transcribed" else WARNING)
+
+    def _finish_wake_mode(self, status: str) -> None:
+        self.is_listening = False
+        self.stop_event.clear()
+        self.listen_button.configure(text="▶  Start wake mode")
+        self._set_status(status, WARNING)
 
 
 def launch() -> None:
