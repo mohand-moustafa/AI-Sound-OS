@@ -51,8 +51,10 @@ evaluation command writes `docs/classification_report.txt`,
 For the complete Ubuntu setup, wake-word flow, speech data collection, and
 known hardware limitations, see [`docs/DEMO.md`](docs/DEMO.md).
 
-Vision commands use `mss` for screenshots and Tesseract OCR for reading screen
-text. Install the OCR engine on Ubuntu with:
+Vision commands use desktop screenshot capture and Tesseract OCR for reading
+screen text. `DESCRIBE_SCREEN` also detects the active window on X11, identifies
+common applications, infers the likely activity, and reports visible text.
+Install the Ubuntu Vision tools with:
 
 ```bash
 sudo apt install -y tesseract-ocr
