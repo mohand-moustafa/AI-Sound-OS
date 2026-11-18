@@ -39,3 +39,8 @@ def test_describe_screen_reports_app_window_activity(monkeypatch, tmp_path):
     assert "classifier.py" in description
     assert "source code" in description
     assert "Visible text:" in description
+
+
+def test_infer_firefox_restore_activity():
+    window = {"app": "firefox", "title": "Restore previous session"}
+    assert "restoring" in screen.infer_activity(window, "Restore Session").lower()

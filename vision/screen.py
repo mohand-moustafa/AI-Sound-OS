@@ -6,6 +6,7 @@ Screenshot capture uses the Python ``mss`` package. OCR uses Tesseract through
 from datetime import datetime
 from pathlib import Path
 import os
+import re
 import shutil
 import subprocess
 
@@ -70,10 +71,21 @@ def ocr_image(path: Path) -> str:
         image = ImageOps.autocontrast(ImageOps.grayscale(image))
 
         candidates = []
-        for psm in ("11", "6"):
-            candidates.append(pytesseract.image_to_string(
-                image, lang="eng", config=f"--psm {psm}",
-            ).strip())
+        variants = [image]
+        try:
+            variants.append(ImageOps.invert(image))
+        except Exception:
+            pass
+        try:
+            variants.append(image.point(lambda value: 255 if value > 150 else 0))
+        except Exception:
+            pass
+        for variant in variants:
+            for psm in ("11", "6", "12"):
+                candidates.append(pytesseract.image_to_string(
+                    variant, lang="eng",
+                    config=f"--psm {psm} preserve_interword_spaces=1",
+                ).strip())
         text = max(candidates, key=len)
         return text
     except pytesseract.TesseractNotFoundError as error:
@@ -111,6 +123,34 @@ def active_window() -> dict:
     if not result["title"]:
         gdbus = shutil.which("gdbus")
         if gdbus:
+            try:
+                output = subprocess.run(
+                    [gdbus, "call", "--session", "--dest", "org.gnome.Shell.Introspect",
+                     "--object-path", "/org/gnome/Shell/Introspect",
+                     "--method", "org.gnome.Shell.Introspect.GetWindows"],
+                    capture_output=True, text=True, timeout=4,
+                ).stdout
+                window_blocks = re.findall(r"\{[^{}]*['\"]title['\"][^{}]*\}", output)
+                for block in window_blocks:
+                    if not re.search(r"['\"]?has-focus['\"]?\s*:\s*<true>", block,
+                                     flags=re.I):
+                        continue
+                    title_match = re.search(
+                        r"['\"]?title['\"]?\s*:\s*<['\"]([^'\"]+)['\"]", block,
+                    )
+                    app_match = re.search(
+                        r"['\"]?app-id['\"]?\s*:\s*<['\"]([^'\"]+)['\"]", block,
+                    )
+                    if title_match:
+                        result["title"] = title_match.group(1)
+                    if app_match:
+                        result["app"] = app_match.group(1)
+                    if result["title"]:
+                        break
+            except (OSError, subprocess.SubprocessError):
+                pass
+
+        if gdbus and not result["title"]:
             script = (
                 "global.display.focus_window ? "
                 "(global.display.focus_window.get_title() || '') : ''"
@@ -127,6 +167,34 @@ def active_window() -> dict:
                     result["title"] = value.strip(" '\"")
             except (OSError, subprocess.SubprocessError):
                 pass
+
+    if not result["app"]:
+        process_apps = (
+            ("firefox", "firefox"),
+            ("chromium", "chromium"),
+            ("google-chrome", "google-chrome"),
+            ("code", "code"),
+            ("gnome-terminal", "gnome-terminal"),
+            ("nautilus", "nautilus"),
+            ("gedit", "gedit"),
+            ("libreoffice", "libreoffice"),
+        )
+        try:
+            for proc in Path("/proc").iterdir():
+                if not proc.name.isdigit():
+                    continue
+                try:
+                    comm = (proc / "comm").read_text().strip().lower()
+                except (OSError, PermissionError):
+                    continue
+                for identifier, app_name in process_apps:
+                    if comm.startswith(identifier):
+                        result["app"] = app_name
+                        break
+                if result["app"]:
+                    break
+        except OSError:
+            pass
     return result
 
 
@@ -171,6 +239,8 @@ def infer_activity(window: dict, text: str) -> str:
             return "Viewing YouTube in the web browser."
         if "settings" in title or "preferences" in title:
             return "Viewing browser settings or preferences."
+        if "restore" in title or "restore" in content:
+            return "Restoring or reopening browser tabs after a session restart."
         return "Browsing a webpage in the active web browser."
     if "files" in app:
         return "Browsing files and folders."
