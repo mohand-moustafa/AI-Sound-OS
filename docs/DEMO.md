@@ -5,7 +5,7 @@
 ```bash
 sudo apt update
 sudo apt install -y python3-venv python3-pip python3-tk git libportaudio2 \
-  libsndfile1 xdg-utils tesseract-ocr
+  libsndfile1 xdg-utils tesseract-ocr tesseract-ocr-eng xdotool gnome-screenshot
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
